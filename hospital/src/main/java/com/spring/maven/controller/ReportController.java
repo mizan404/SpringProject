@@ -68,14 +68,14 @@ public class ReportController implements IReportController {
         GsonBuilder gson = new GsonBuilder();
         Gson g = gson.create();
         Report report = reportService.getByNid(patient_nid);
-        return g.toJson(report);
+        return g.toJson( report);
     }
 
     @RequestMapping(value = "getReportById/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String getReportById(@PathVariable("id") int id) {
         GsonBuilder gson = new GsonBuilder();
         Gson g = gson.create();
-        Report report = reportService.getByNid(id);
+        Report report = reportService.getById(id);
         return g.toJson(report);
     }
 

@@ -72,11 +72,11 @@ public class ReportService implements IReportService {
         String test4 = request.getParameter("test4");
         String test5 = request.getParameter("test5");
 
-        String test_report1 = request.getParameter("test_report1");
-        String test_report2 = request.getParameter("test_report2");
-        String test_report3 = request.getParameter("test_report3");
-        String test_report4 = request.getParameter("test_report4");
-        String test_report5 = request.getParameter("test_report5");
+        String test_report1 = request.getParameter("testReport1");
+        String test_report2 = request.getParameter("testReport2");
+        String test_report3 = request.getParameter("testReport3");
+        String test_report4 = request.getParameter("testReport4");
+        String test_report5 = request.getParameter("testReport5");
 
         Report report = new Report();
         report.setPatient_nid(patient_nid);

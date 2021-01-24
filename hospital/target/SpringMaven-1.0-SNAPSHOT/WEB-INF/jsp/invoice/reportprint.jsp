@@ -53,15 +53,15 @@
                 </div>
 
                 <!--------------------------------------->
-                <form action=""> 
+                <form action="/reportSave" method="post"> 
                     <div class="row" style="font-size: 10px;">
                         <div class="col">
                             <p class="text-uppercase" style="font-size: 20px;margin-bottom: 0px;margin-top: 10px;">
-                                <strong>Invoice :&nbsp;</strong>INV-<input type="text" style="width: 150px;" name="id" id="id"/><br></p>
+                                <strong>Invoice :&nbsp;</strong>INV-<input type="text" style="width: 150px;" id="id"/><br></p>
                         </div>
                         <div class="col text-center"><button class="btn btn-light border rounded-0" type="button" id="btnSearch" ><strong>Search Patient Test</strong></button></div>
                         <div class="col">
-                            <p class="text-uppercase" style="font-size: 20px;margin-bottom: 0px;margin-top: 10px;">Date :&nbsp;<input type="text" name="date" style="width: 150px;" id="date"/></p>
+                            <p class="text-uppercase" style="font-size: 20px;margin-bottom: 0px;margin-top: 10px;">Date :&nbsp;<input type="text" name="date" style="width: 150px;" id="date" /></p>
                         </div>
                     </div>
                     <div class="row">
@@ -74,7 +74,7 @@
                                     <tbody class="text-left">
                                         <tr class="text-left">
                                             <td class="text-left" style="width: 160px;padding: 13px;font-size: 20px;"><strong>Patient NID:&nbsp;</strong></td>
-                                            <td><input class="form-control-lg" type="text" style="width: 320px;" id="patient_nid"/></td>
+                                            <td><input class="form-control-lg" type="text" style="width: 320px;" id="patient_nid" name="patient_nid"/></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -89,7 +89,7 @@
                                     <tbody class="text-left">
                                         <tr class="text-left">
                                             <td class="text-left" style="width: 160px;padding: 13px;font-size: 20px;">Name:&nbsp;</td>
-                                            <td><input class="form-control-plaintext" type="text" readonly="" style="padding-top: 0px;padding-bottom: 0px;font-size: 20px;" id="patient_name" /></td>
+                                            <td><input class="form-control-plaintext" type="text" readonly="" style="padding-top: 0px;padding-bottom: 0px;font-size: 20px;" id="patient_name" name="patient_name" /></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -106,7 +106,7 @@
                                     <tbody class="text-left">
                                         <tr class="text-left">
                                             <td class="text-left" style="width: 150px;padding: 13px;font-size: 20px;">Age:&nbsp;</td>
-                                            <td><input class="form-control-plaintext" type="text" readonly="" style="padding-top: 0px;padding-bottom: 0px;font-size: 20px;" id="patient_age"/></td>
+                                            <td><input class="form-control-plaintext" type="text" readonly="" style="padding-top: 0px;padding-bottom: 0px;font-size: 20px;" id="patient_age" name="patient_age"/></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -121,7 +121,7 @@
                                     <tbody class="text-left">
                                         <tr class="text-left">
                                             <td class="text-left" style="width: 170px;padding: 13px;font-size: 20px;">Gender:&nbsp;</td>
-                                            <td><input class="form-control-plaintext" type="text" readonly="" style="padding-top: 0px;padding-bottom: 0px;font-size: 20px;" id="patient_gender"/></td>
+                                            <td><input class="form-control-plaintext" type="text" readonly="" style="padding-top: 0px;padding-bottom: 0px;font-size: 20px;" id="patient_gender" name="patient_gender"/></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -138,7 +138,7 @@
                                     <tbody class="text-left">
                                         <tr class="text-left">
                                             <td class="text-left" style="width: 173px;padding: 13px;font-size: 20px;">Address:&nbsp;</td>
-                                            <td><input class="form-control-plaintext" type="text" readonly="" style="padding-top: 0px;padding-bottom: 0px;font-size: 20px;" id="patient_address"/></td>
+                                            <td><input class="form-control-plaintext" type="text" readonly="" style="padding-top: 0px;padding-bottom: 0px;font-size: 20px;" id="patient_address" name="patient_address"/></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -165,51 +165,73 @@
                                     <tbody>
                                         <tr>
                                             <td>1</td>
-                                            <td><input type="text" style="width: 400px;" id="test1"/></td>
-                                            <td><input type="text" style="width: 190px;" id="test_result1" /></td>
+                                            <td><input type="text" style="width: 400px;" id="test1" name="test1"/></td>
+                                            <td><input type="text" style="width: 190px;" id="test_result1" name="testReport1"/></td>
                                             <td><input type="text" style="width: 190px;"></td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
-                                            <td><input type="text" style="width: 400px;" id="test2"/></td>
-                                            <td><input type="text" style="width: 190px;"></td>
+                                            <td><input type="text" style="width: 400px;" id="test2" name="test2"/></td>
+                                            <td><input type="text" style="width: 190px;" id="test_result2" name="testReport2"/></td>
                                             <td><input type="text" style="width: 190px;"></td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td><input type="text" style="width: 400px;" id="test3"/></td>
-                                            <td><input type="text" style="width: 190px;"></td>
+                                            <td><input type="text" style="width: 400px;" id="test3" name="test3"/></td>
+                                            <td><input type="text" style="width: 190px;" id="test_result3" name="testReport3"/></td>
                                             <td><input type="text" style="width: 190px;"></td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
-                                            <td><input type="text" style="width: 400px;" id="test4"/></td>
-                                            <td><input type="text" style="width: 190px;"></td>
+                                            <td><input type="text" style="width: 400px;" id="test4" name="test4"/></td>
+                                            <td><input type="text" style="width: 190px;" id="test_result4" name="testReport4"/></td>
                                             <td><input type="text" style="width: 190px;"></td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
-                                            <td><input type="text" style="width: 400px;" id="test5"/></td>
-                                            <td><input type="text" style="width: 190px;"></td>
+                                            <td><input type="text" style="width: 400px;" id="test5" name="test5"/></td>
+                                            <td><input type="text" style="width: 190px;" id="test_result5" name="testReport5"/></td>
                                             <td><input type="text" style="width: 190px;"></td>
                                         </tr>
 
                                     </tbody>
-                                    <input type="hidden"  name="crmId" id="crmId"/>
-                                    <input type="hidden"  name="crmFirstName" id="crmFirstName"/>
-                                    <input type="hidden"  name="crmLastName" id="crmLastName"/>
-                                    <input type="hidden"  name="role" id="role"/>
-                                    <input type="hidden"  name="profile" id="profile"/>
-                                    <input type="hidden"  name="crmEmail" id="crmEmail"/>
-                                    <input type="hidden"  name="crmMobile" id="crmMobile"/>
-                                    <input type="hidden"  name="crmFax" id="crmFax"/>
-                                    <input type="hidden"  name="crmWebsite" id="crmWebsite"/>
-                                    <input type="hidden"  name="dateOfBirth" id="dateOfBirth"/>
-                                    <input type="hidden"  name="crmStreet" id="crmStreet"/>
-                                    <input type="hidden"  name="crmCity" id="crmCity"/>
-                                    <input type="hidden"  name="crmState" id="crmState"/>
-                                    <input type="hidden"  name="crmZipCode" id="crmZipCode"/>
-                                    <input type="hidden"  name="crmCountry" id="crmCountry"/>
+                                    <input type="hidden"  name="temperature" id="temperature"/>
+                                    <input type="hidden"  name="weight" id="weight"/>
+                                    <input type="hidden"  name="blood_pressure" id="blood_pressure"/>
+                                    <input type="hidden"  name="date" id="date"/>
+
+                                    <input type="hidden"  name="symptom1" id="symptom1"/>
+                                    <input type="hidden"  name="symptom2" id="symptom2"/>
+                                    <input type="hidden"  name="symptom3" id="symptom3"/>
+                                    <input type="hidden"  name="symptom4" id="symptom4"/>
+                                    <input type="hidden"  name="symptom5" id="symptom5"/>
+
+                                    <input type="hidden"  name="symptom_duration1" id="symptom_duration1"/>
+                                    <input type="hidden"  name="symptom_duration2" id="symptom_duration2"/>
+                                    <input type="hidden"  name="symptom_duration3" id="symptom_duration3"/>
+                                    <input type="hidden"  name="symptom_duration4" id="symptom_duration4"/>
+                                    <input type="hidden"  name="symptom_duration5" id="symptom_duration5"/>
+
+
+                                    <input type="hidden"  name="medicine1" id="medicine1"/>
+                                    <input type="hidden"  name="medicine2" id="medicine2"/>
+                                    <input type="hidden"  name="medicine3" id="medicine3"/>
+                                    <input type="hidden"  name="medicine4" id="medicine4"/>
+                                    <input type="hidden"  name="medicine5" id="medicine5"/>
+
+                                    <input type="hidden"  name="medicine_dose1" id="medicine_dose1"/>
+                                    <input type="hidden"  name="medicine_dose2" id="medicine_dose2"/>
+                                    <input type="hidden"  name="medicine_dose3" id="medicine_dose3"/>
+                                    <input type="hidden"  name="medicine_dose4" id="medicine_dose4"/>
+                                    <input type="hidden"  name="medicine_dose5" id="medicine_dose5"/>
+
+                                    <input type="hidden"  name="medicine_duration1" id="medicine_duration1"/>
+                                    <input type="hidden"  name="medicine_duration2" id="medicine_duration2"/>
+                                    <input type="hidden"  name="medicine_duration3" id="medicine_duration3"/>
+                                    <input type="hidden"  name="medicine_duration4" id="medicine_duration4"/>
+                                    <input type="hidden"  name="medicine_duration5" id="medicine_duration5"/>
+
+
                                 </table>
                             </div>
                         </div>
@@ -219,7 +241,7 @@
                             <p>Prepared By:&nbsp;</p>
                         </div>
                         <div class="col-3 text-center" style="margin-bottom: 20px;padding: 0px;">
-                            <p></p><button class="btn btn-primary text-center" type="submit" onclick="myFunction()" style="padding: 10px;">Print &amp; Save</button></div>
+                            <p></p><button class="btn btn-primary text-center" type="button" onclick="myFunction()" style="padding: 10px;">Print &amp; Save</button></div>
                     </div>
                 </form>
                 <!----------------------------------------->
@@ -249,7 +271,9 @@
 
 
 <jsp:include page="/WEB-INF/jsp/common/home/footer.jsp" />
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!------------------------------------------------------------------------------>
+<!--Search Patient Details for Test Lists-->
 <script>
 
     $("#btnSearch").click(function () {
@@ -262,6 +286,40 @@
             $("#patient_age").val(data.patient_age);
             $("#patient_gender").val(data.patient_gender);
             $("#patient_address").val(data.patient_address);
+            $("#temperature").val(data.temperature);
+            $("#weight").val(data.weight);
+            $("#blood_pressure").val(data.blood_pressure);
+            $("#date").val(data.date);
+
+            $("#symptom1").val(data.symptom1);
+            $("#symptom2").val(data.symptom2);
+            $("#symptom3").val(data.symptom3);
+            $("#symptom4").val(data.symptom4);
+            $("#symptom5").val(data.symptom5);
+
+            $("#symptom_duration1").val(data.symptom_duration1);
+            $("#symptom_duration2").val(data.symptom_duration2);
+            $("#symptom_duration3").val(data.symptom_duration3);
+            $("#symptom_duration4").val(data.symptom_duration4);
+            $("#symptom_duration5").val(data.symptom_duration5);
+
+            $("#medicine1").val(data.medicine1);
+            $("#medicine2").val(data.medicine2);
+            $("#medicine3").val(data.medicine3);
+            $("#medicine4").val(data.medicine4);
+            $("#medicine5").val(data.medicine5);
+
+            $("#medicine_dose1").val(data.medicine_dose1);
+            $("#medicine_dose2").val(data.medicine_dose2);
+            $("#medicine_dose3").val(data.medicine_dose3);
+            $("#medicine_dose4").val(data.medicine_dose4);
+            $("#medicine_dose5").val(data.medicine_dose5);
+
+            $("#medicine_duration1").val(data.medicine_duration1);
+            $("#medicine_duration2").val(data.medicine_duration2);
+            $("#medicine_duration3").val(data.medicine_duration3);
+            $("#medicine_duration4").val(data.medicine_duration4);
+            $("#medicine_duration5").val(data.medicine_duration5);
 
             $("#test1").val(data.test1);
             $("#test2").val(data.test2);
@@ -269,22 +327,29 @@
             $("#test4").val(data.test4);
             $("#test5").val(data.test5);
 
+
         });
     });
 </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!------------------------------------------------------------------------------>
+<!-- Post Rest API to CenterDatabase-->
+
 <script>
-    $(document).ready(function () {
-        $("button").click(function () {
-            $.post("demo_test_post.asp",
+    function myFunction(){
+        alert();
+           $.get("http://localhost:8080/info/getPatientReportByNid",
                     {
+                        nid: $("#patient_nid").val(),
                         name: "Donald Duck",
                         city: "Duckburg"
                     },
             function (data, status) {
                 alert("Data: " + data + "\nStatus: " + status);
             });
-        });
-    });
+    }
+        
+        
+        
+         
 </script>
