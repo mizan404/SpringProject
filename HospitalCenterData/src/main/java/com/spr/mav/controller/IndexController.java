@@ -8,6 +8,8 @@ package com.spr.mav.controller;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.spr.mav.model.Patient;
+import com.spr.mav.model.PatientReport;
+import com.spr.mav.service.impl.IPatientReportService;
 import com.spr.mav.service.impl.IPatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -27,6 +29,8 @@ public class IndexController {
 
     @Autowired
     IPatientService patientService;
+
+    IPatientReportService patientReportService;
 
     @RequestMapping("/")
     public ModelAndView index() {
@@ -128,8 +132,17 @@ public class IndexController {
     public String getAllPatientsByNid(@PathVariable("patient_nid") int patient_nid) {
         GsonBuilder gson = new GsonBuilder();
         Gson g = gson.create();
-        Patient patient = patientService.getById(patient_nid);
+        Patient patient = patientService.getByNid(patient_nid);
         return g.toJson(patient);
+    }
+//-------------------- for Patient Report Rest API---------------------------
+
+    @RequestMapping(value = "/getAllPatientReportByNid/{patient_nid}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String getAllPatientReportByNid(@PathVariable("patient_nid") int patient_nid) {
+        GsonBuilder gson = new GsonBuilder();
+        Gson g = gson.create();
+        PatientReport patientReport = patientReportService.getByNid(patient_nid);
+        return g.toJson(patientReport);
     }
 
 }

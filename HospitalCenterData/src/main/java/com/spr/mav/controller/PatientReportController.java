@@ -64,22 +64,23 @@ public class PatientReportController implements IPatientReportController {
 
     @RequestMapping(value = "/getPatientReportByNid", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String getAllPatientsByNid(HttpServletRequest request) {
-        System.out.println("///////////////............ " + request.getParameter("nid"));
+        patientReportService.save(request);
+
         //GsonBuilder gson = new GsonBuilder();
         //Gson g = gson.create();
         //PatientReport patientReport = patientReportService.getByNid(patient_nid);
-       // return g.toJson(patientReport);
+        // return g.toJson(patientReport);
         return null;
     }
-    @RequestMapping(value = "/getPatientReport1", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String getAllPatientsByNid() {
-        System.out.println("///////////////............ " );
-        //GsonBuilder gson = new GsonBuilder();
-        //Gson g = gson.create();
-        //PatientReport patientReport = patientReportService.getByNid(patient_nid);
-       // return g.toJson(patientReport);
-        return null;
-    }
+//    @RequestMapping(value = "/getPatientReport1", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+//    public String getAllPatientsByNid() {
+//        System.out.println("///////////////............ " );
+//        //GsonBuilder gson = new GsonBuilder();
+//        //Gson g = gson.create();
+//        //PatientReport patientReport = patientReportService.getByNid(patient_nid);
+//       // return g.toJson(patientReport);
+//        return null;
+//    }
 
     @RequestMapping(value = "/getPatientReportById/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String getAllPatientsById(@PathVariable("id") int id) {

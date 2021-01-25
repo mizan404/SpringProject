@@ -26,7 +26,9 @@ public class PatientReportDAO implements IPatientReportDAO {
 
     @Override
     public PatientReport save(PatientReport t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        sessionFactory.getCurrentSession().save(t);
+        sessionFactory.getCurrentSession().flush();
+        return t;
     }
 
     @Override

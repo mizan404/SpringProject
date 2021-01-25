@@ -166,31 +166,31 @@
                                         <tr>
                                             <td>1</td>
                                             <td><input type="text" style="width: 400px;" id="test1" name="test1"/></td>
-                                            <td><input type="text" style="width: 190px;" id="test_result1" name="testReport1"/></td>
+                                            <td><input type="text" style="width: 190px;" id="testReport1" name="testReport1"/></td>
                                             <td><input type="text" style="width: 190px;"></td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
                                             <td><input type="text" style="width: 400px;" id="test2" name="test2"/></td>
-                                            <td><input type="text" style="width: 190px;" id="test_result2" name="testReport2"/></td>
+                                            <td><input type="text" style="width: 190px;" id="testReport2" name="testReport2"/></td>
                                             <td><input type="text" style="width: 190px;"></td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
                                             <td><input type="text" style="width: 400px;" id="test3" name="test3"/></td>
-                                            <td><input type="text" style="width: 190px;" id="test_result3" name="testReport3"/></td>
+                                            <td><input type="text" style="width: 190px;" id="testReport3" name="testReport3"/></td>
                                             <td><input type="text" style="width: 190px;"></td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
                                             <td><input type="text" style="width: 400px;" id="test4" name="test4"/></td>
-                                            <td><input type="text" style="width: 190px;" id="test_result4" name="testReport4"/></td>
+                                            <td><input type="text" style="width: 190px;" id="testReport4" name="testReport4"/></td>
                                             <td><input type="text" style="width: 190px;"></td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
                                             <td><input type="text" style="width: 400px;" id="test5" name="test5"/></td>
-                                            <td><input type="text" style="width: 190px;" id="test_result5" name="testReport5"/></td>
+                                            <td><input type="text" style="width: 190px;" id="testReport5" name="testReport5"/></td>
                                             <td><input type="text" style="width: 190px;"></td>
                                         </tr>
 
@@ -290,66 +290,99 @@
             $("#weight").val(data.weight);
             $("#blood_pressure").val(data.blood_pressure);
             $("#date").val(data.date);
-
             $("#symptom1").val(data.symptom1);
             $("#symptom2").val(data.symptom2);
             $("#symptom3").val(data.symptom3);
             $("#symptom4").val(data.symptom4);
             $("#symptom5").val(data.symptom5);
-
             $("#symptom_duration1").val(data.symptom_duration1);
             $("#symptom_duration2").val(data.symptom_duration2);
             $("#symptom_duration3").val(data.symptom_duration3);
             $("#symptom_duration4").val(data.symptom_duration4);
             $("#symptom_duration5").val(data.symptom_duration5);
-
             $("#medicine1").val(data.medicine1);
             $("#medicine2").val(data.medicine2);
             $("#medicine3").val(data.medicine3);
             $("#medicine4").val(data.medicine4);
             $("#medicine5").val(data.medicine5);
-
             $("#medicine_dose1").val(data.medicine_dose1);
             $("#medicine_dose2").val(data.medicine_dose2);
             $("#medicine_dose3").val(data.medicine_dose3);
             $("#medicine_dose4").val(data.medicine_dose4);
             $("#medicine_dose5").val(data.medicine_dose5);
-
             $("#medicine_duration1").val(data.medicine_duration1);
             $("#medicine_duration2").val(data.medicine_duration2);
             $("#medicine_duration3").val(data.medicine_duration3);
             $("#medicine_duration4").val(data.medicine_duration4);
             $("#medicine_duration5").val(data.medicine_duration5);
-
             $("#test1").val(data.test1);
             $("#test2").val(data.test2);
             $("#test3").val(data.test3);
             $("#test4").val(data.test4);
             $("#test5").val(data.test5);
-
-
         });
-    });
-</script>
+    });</script>
 
 <!------------------------------------------------------------------------------>
 <!-- Post Rest API to CenterDatabase-->
 
 <script>
-    function myFunction(){
+    function myFunction() {
         alert();
-           $.get("http://localhost:8080/info/getPatientReportByNid",
-                    {
-                        nid: $("#patient_nid").val(),
-                        name: "Donald Duck",
-                        city: "Duckburg"
-                    },
-            function (data, status) {
-                alert("Data: " + data + "\nStatus: " + status);
-            });
+        $.get("http://localhost:8080/info/getPatientReportByNid",
+                {
+                    patient_nid: $("#patient_nid").val(),
+                    patient_name: $("#patient_name").val(),
+                    patient_age: $("#patient_age").val(),
+                    patient_gender: $("#patient_gender").val(),
+                    patient_address: $("#patient_address").val(),
+                    temperature: $("#temperature").val(),
+                    weight: $("#weight").val(),
+                    blood_pressure: $("#blood_pressure").val(),
+                    date: $("#date").val(),
+                    symptom1: $("#symptom1").val(),
+                    symptom2: $("#symptom2").val(),
+                    symptom3: $("#symptom3").val(),
+                    symptom4: $("#symptom4").val(),
+                    symptom5: $("#symptom5").val(),
+                    symptom_duration1: $("#symptom_duration1").val(),
+                    symptom_duration2: $("#symptom_duration2").val(),
+                    symptom_duration3: $("#symptom_duration3").val(),
+                    symptom_duration4: $("#symptom_duration4").val(),
+                    symptom_duration5: $("#symptom_duration5").val(),
+                    medicine1: $("#medicine1").val(),
+                    medicine2: $("#medicine2").val(),
+                    medicine3: $("#medicine3").val(),
+                    medicine4: $("#medicine4").val(),
+                    medicine5: $("#medicine5").val(),
+                    medicine_dose1: $("#medicine_dose1").val(),
+                    medicine_dose2: $("#medicine_dose2").val(),
+                    medicine_dose3: $("#medicine_dose3").val(),
+                    medicine_dose4: $("#medicine_dose4").val(),
+                    medicine_dose5: $("#medicine_dose5").val(),
+                    medicine_duration1: $("#medicine_duration1").val(),
+                    medicine_duration2: $("#medicine_duration2").val(),
+                    medicine_duration3: $("#medicine_duration3").val(),
+                    medicine_duration4: $("#medicine_duration4").val(),
+                    medicine_duration5: $("#medicine_duration5").val(),
+                    test1: $("#test1").val(),
+                    test2: $("#test2").val(),
+                    test3: $("#test3").val(),
+                    test4: $("#test4").val(),
+                    test5: $("#test5").val(),
+                    testReport1: $("#testReport1").val(),
+                    testReport2: $("#testReport2").val(),
+                    testReport3: $("#testReport3").val(),
+                    testReport4: $("#testReport4").val(),
+                    testReport5: $("#testReport5").val()
+
+                },
+        function (data, status) {
+            alert("Data: " + data + "\nStatus: " + status);
+        });
     }
-        
-        
-        
-         
+
+
+
+
 </script>
