@@ -62,22 +62,31 @@ public class PatientReportController implements IPatientReportController {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @RequestMapping(value = "/getPatientReportByNid", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+//    @RequestMapping(value = "/getPatientReportByNid/{patient_nid}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+//    public String getAllPatientsByNid(@PathVariable("patient_nid") int patient_nid) {
+//        GsonBuilder gson = new GsonBuilder();
+//        Gson g = gson.create();
+//        PatientReport patientReport = patientReportService.getByNid(patient_nid);
+//        return g.toJson(patientReport);
+//    }
+    @RequestMapping(value = "/getPatientReportByNid", method = RequestMethod.GET)
     public String getAllPatientsByNid(HttpServletRequest request) {
         System.out.println("///////////////............ " + request.getParameter("nid"));
+        System.out.println("///////////////............ " + request.getParameter("age"));
         //GsonBuilder gson = new GsonBuilder();
         //Gson g = gson.create();
         //PatientReport patientReport = patientReportService.getByNid(patient_nid);
-       // return g.toJson(patientReport);
+        // return g.toJson(patientReport);
         return null;
     }
+
     @RequestMapping(value = "/getPatientReport1", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String getAllPatientsByNid() {
-        System.out.println("///////////////............ " );
+        System.out.println("///////////////............ ");
         //GsonBuilder gson = new GsonBuilder();
         //Gson g = gson.create();
         //PatientReport patientReport = patientReportService.getByNid(patient_nid);
-       // return g.toJson(patientReport);
+        // return g.toJson(patientReport);
         return null;
     }
 

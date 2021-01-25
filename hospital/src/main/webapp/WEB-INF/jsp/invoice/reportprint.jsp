@@ -241,7 +241,7 @@
                             <p>Prepared By:&nbsp;</p>
                         </div>
                         <div class="col-3 text-center" style="margin-bottom: 20px;padding: 0px;">
-                            <p></p><button class="btn btn-primary text-center" type="button" onclick="myFunction()" style="padding: 10px;">Print &amp; Save</button></div>
+                            <p></p><button class="btn btn-primary text-center" type="submit"  id="button" onclick="myFunction()" style="padding: 10px;">Print &amp; Save</button></div>
                     </div>
                 </form>
                 <!----------------------------------------->
@@ -261,16 +261,17 @@
 
 
 
+
+
+
+
+<jsp:include page="/WEB-INF/jsp/common/home/footer.jsp" />
 <script>
     function myFunction() {
         window.print();
     }
 </script>
 
-
-
-
-<jsp:include page="/WEB-INF/jsp/common/home/footer.jsp" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!------------------------------------------------------------------------------>
 <!--Search Patient Details for Test Lists-->
@@ -336,20 +337,20 @@
 <!-- Post Rest API to CenterDatabase-->
 
 <script>
-    function myFunction(){
-        alert();
-           $.get("http://localhost:8080/info/getPatientReportByNid",
-                    {
-                        nid: $("#patient_nid").val(),
-                        name: "Donald Duck",
-                        city: "Duckburg"
-                    },
-            function (data, status) {
-                alert("Data: " + data + "\nStatus: " + status);
-            });
-    }
-        
-        
-        
-         
+    $("button").click(function () {
+
+        $.post("http://localhost:8080/info/getPatientReportByNid",
+                {
+                    nid: $("#patient_nid").val(),
+                    age: $("#patient_age").val,
+                    name: "Donald Duck",
+                    city: "Duckburg"
+                },
+        function (data, status) {
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+    });
+
+
+
 </script>

@@ -161,7 +161,7 @@ CREATE TABLE `patientreport` (
   `test_report4` varchar(45) NOT NULL,
   `test_report5` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patientreport`

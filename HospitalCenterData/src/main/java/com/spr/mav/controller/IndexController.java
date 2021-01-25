@@ -27,6 +27,7 @@ public class IndexController {
 
     @Autowired
     IPatientService patientService;
+    
 
     @RequestMapping("/")
     public ModelAndView index() {

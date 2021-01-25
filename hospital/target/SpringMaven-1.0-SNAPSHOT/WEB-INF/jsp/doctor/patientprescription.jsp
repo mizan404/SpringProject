@@ -74,7 +74,9 @@
                     <div class="form-row">
                         <div class="col">
                             <fieldset>
-                                <legend>Patient History<a class="text-center float-right" href="#" style="color: rgb(0,10,255);">Click for Old Report</a></legend>
+                                <legend>Patient History
+                                    <a class="text-center float-right" href="#" style="color: rgb(0,10,255);">Click for Old Report</a>
+                                </legend>
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="table-responsive">
