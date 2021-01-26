@@ -11,6 +11,10 @@ import com.spr.mav.model.Patient;
 import com.spr.mav.model.PatientReport;
 import com.spr.mav.service.impl.IPatientReportService;
 import com.spr.mav.service.impl.IPatientService;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,6 +34,7 @@ public class IndexController {
     @Autowired
     IPatientService patientService;
 
+    @Autowired
     IPatientReportService patientReportService;
 
     @RequestMapping("/")
@@ -67,8 +72,17 @@ public class IndexController {
 //    }
     //EmployeeData
     @RequestMapping("/dashboard")
-    public ModelAndView DashBoard() {
-        return new ModelAndView("/admin/dashboard");
+    public ModelAndView DashBoard(HttpServletRequest request) {
+        String nid = request.getParameter("nid");
+        String name = request.getParameter("name");
+        String password = request.getParameter("password");
+        Map<String, Object> map = new HashMap<String, Object>();
+        if (nid.equalsIgnoreCase("12345") && name.equalsIgnoreCase("admin") && password.equalsIgnoreCase("12345")) {
+            return new ModelAndView("/admin/dashboard");
+        } else {
+            map.put("status", "Incorrect: Nid or Name or Password");
+            return new ModelAndView("/admin/login", "map", map);
+        }
     }
 
     //Admin Page
@@ -137,11 +151,16 @@ public class IndexController {
     }
 //-------------------- for Patient Report Rest API---------------------------
 
-    @RequestMapping(value = "/getAllPatientReportByNid/{patient_nid}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String getAllPatientReportByNid(@PathVariable("patient_nid") int patient_nid) {
+    @RequestMapping(value = "/getAllPatientReportByNid", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String getAllPatientReportByNid(HttpServletRequest request) {
+        String patient_nid = request.getParameter("patient_nid");
+        System.out.println("./..................... " + patient_nid);
         GsonBuilder gson = new GsonBuilder();
         Gson g = gson.create();
-        PatientReport patientReport = patientReportService.getByNid(patient_nid);
+        List<PatientReport> patientReport = patientReportService.getByNid(Integer.parseInt(patient_nid));
+        for (PatientReport patientReport1 : patientReport) {
+            System.out.println(patientReport1.getMedicine1() + "       ......");
+        }
         return g.toJson(patientReport);
     }
 

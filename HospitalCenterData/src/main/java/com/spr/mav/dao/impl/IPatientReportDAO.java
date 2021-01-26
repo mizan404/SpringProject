@@ -7,6 +7,7 @@ package com.spr.mav.dao.impl;
 
 import com.spr.mav.common.ICommonDAO;
 import com.spr.mav.model.PatientReport;
+import java.util.List;
 
 /**
  *
@@ -14,5 +15,5 @@ import com.spr.mav.model.PatientReport;
  */
 public interface IPatientReportDAO extends ICommonDAO<PatientReport> {
 
-    public PatientReport getByNid(int patient_nid);
+    public List<PatientReport> getByNid(int patient_nid);
 }

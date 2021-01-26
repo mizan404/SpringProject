@@ -241,7 +241,11 @@
                             <p>Prepared By:&nbsp;</p>
                         </div>
                         <div class="col-3 text-center" style="margin-bottom: 20px;padding: 0px;">
-                            <p></p><button class="btn btn-primary text-center" type="button" onclick="myFunction()" style="padding: 10px;">Print &amp; Save</button></div>
+                            <p></p><button class="btn btn-primary text-center" type="button" onclick="myFunction1()" style="padding: 10px;">Print</button>
+                        </div>
+                        <div class="col-3 text-center" style="margin-bottom: 20px;padding: 0px;">
+                            <p></p><button class="btn btn-primary text-center" type="submit" onclick="myFunction()" style="padding: 10px;">Save</button>
+                        </div>
                     </div>
                 </form>
                 <!----------------------------------------->
@@ -262,7 +266,7 @@
 
 
 <script>
-    function myFunction() {
+    function myFunction1() {
         window.print();
     }
 </script>
@@ -328,7 +332,7 @@
 
 <script>
     function myFunction() {
-        alert();
+
         $.get("http://localhost:8080/info/getPatientReportByNid",
                 {
                     patient_nid: $("#patient_nid").val(),

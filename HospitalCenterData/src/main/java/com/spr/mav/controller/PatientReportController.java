@@ -89,5 +89,13 @@ public class PatientReportController implements IPatientReportController {
         PatientReport patientReport = patientReportService.getById(id);
         return g.toJson(patientReport);
     }
+//
+//    @RequestMapping(value = "/getPatientReportByNid/{patient_nid}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+//    public String getAllPatientsByNid(@PathVariable("patient_nid") int patient_nid) {
+//        GsonBuilder gson = new GsonBuilder();
+//        Gson g = gson.create();
+//        List<PatientReport> patientReport = patientReportService.getByNid(patient_nid);
+//        return g.toJson(patientReport);
+//    }
 
 }

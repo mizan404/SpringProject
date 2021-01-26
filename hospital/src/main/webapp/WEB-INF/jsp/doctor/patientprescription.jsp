@@ -37,7 +37,7 @@
                 </div>
             </nav>
 
-            <div class="container" style="margin-top: 10px;">
+            <div class="container-fluid" style="margin-top: 10px;">
                 <form action="/patientSave" method="post" style="margin-bottom: 10px;">
                     <div class="form-row">
                         <div class="col">
@@ -45,7 +45,7 @@
                                 <legend>Pateint Details</legend>
                                 <div class="form-row">
                                     <div class="col"><label>Patient NID</label>
-                                        <input class="form-control" type="text" name="patient_nid" value="${map.hospitalAppointment.patient_nid}"/></div>
+                                        <input class="form-control" type="text" id="patient_nid" name="patient_nid" value="${map.hospitalAppointment.patient_nid}"/></div>
                                     <div class="col"><label>Patient Name</label>
                                         <input class="form-control" type="text" name="patient_name" value="${map.hospitalAppointment.patient_name}"/></div>
                                     <div class="col"><label>Age</label>
@@ -74,12 +74,12 @@
                     <div class="form-row">
                         <div class="col">
                             <fieldset>
-                                <legend>Patient History<a class="text-center float-right" href="#" style="color: rgb(0,10,255);">Click for Old Report</a></legend>
+                                <legend>Patient History <button class="text-center float-right" type="button" id="btnViewAll" >Old Report</button></legend>
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="table-responsive">
                                             <!----------------------------------------------------------------------------------------------------->
-                                            <table class="table">
+                                            <table class="table" id="empTable">
                                                 <thead>
                                                     <tr>
                                                         <th>Date</th>
@@ -90,13 +90,13 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>Cell 1</td>
-                                                        <td>Cell 1</td>
-                                                        <td>Cell 1</td>
-                                                        <td>Cell 1</td>
-                                                        <td>Cell 1</td>
-                                                    </tr>
+                                                    <!--                                                    <tr>
+                                                                                                            <td>Cell 1</td>
+                                                                                                            <td>Cell 1</td>
+                                                                                                            <td>Cell 1</td>
+                                                                                                            <td>Cell 1</td>
+                                                                                                            <td>Cell 1</td>
+                                                                                                        </tr>-->
                                                 </tbody>
                                             </table>
                                             <!---------------------------------------------------------------------------------------------------------->
@@ -607,7 +607,7 @@
                     </div>
                     <!--<button class="btn btn-primary hidden-print" ><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>-->
 
-                    <button class="btn btn-success btn-lg text-center float-right" type="submit" onclick="myFunction()" style="width: 130px;height: 50px;margin-top: 30px;font-size: 25px;margin-bottom: 10px;">
+                    <button class="btn btn-success btn-lg text-center float-right" type="submit"  style="width: 130px;height: 50px;margin-top: 30px;font-size: 25px;margin-bottom: 10px;">
                         <strong>Submit</strong>
                     </button>
                 </form>
@@ -617,17 +617,13 @@
     </div>
 
 </div>
-<!--<script>
-    function myFunction() {
-        window.print();
-    }
-</script>-->
+
 
 <jsp:include page="/WEB-INF/jsp/common/home/footer.jsp" />
-
+<!--
 <script>
 
-    $("#btnSearch").click(function () {
+    $("#searchReport").click(function () {
         $.get("http://localhost:8080/info/getPatientReportByNid/" + $("#patient_nid").val(), function (data, status) {
 //            console.log(data);
 
@@ -637,4 +633,65 @@
             $("#patient_address").val(data.patient_address);
         });
     });
+</script>-->
+<!--<script>
+    $("#btnViewAll").on("click", function () {
+
+        $("#empTable tbody").empty();
+        $.ajax({
+            url: 'https://localhost:8080/info/getPatientReportByNid/' + $("#patient_nid").val(),
+            type: 'GET',
+            dataType: 'json',
+            success: function (data, textStatus, jqXHR) {
+                alert(data.medicine1);
+                for (i = 0; i < data.length; i++) {
+                    var html = '<tr>';
+                    html += '<td>' + data[i].date + '</td>';
+                    html += '<td>' + data[i].symptom1 + '</td>';
+                    html += '<td>' + data[i].medicine1 + '</td>';
+                    html += '<td>' + data[i].test1 + '</td>';
+                    html += '<td>' + data[i].testReport1 + '</td>';
+
+                    html += '</tr>';
+                    $("#empTable tbody").append(html);
+                }
+            }
+        });
+
+
+    });
+
+
+</script>-->
+<script>
+    $("#btnViewAll").on("click", function () {
+
+        $("#empTable tbody").empty();
+
+
+        $.get("http://localhost:8080/info/getAllPatientReportByNid/",
+                {
+                    patient_nid: $("#patient_nid").val()
+                },
+        function (data, status) {
+
+            for (i = 0; i < data.length; i++) {
+                var html = '<tr>';
+
+                html += '<td>' + data[i].date + '</td>';
+                html += '<td>' + data[i].symptom1 + '</td>';
+                html += '<td>' + data[i].symptom2 + '</td>';
+                html += '<td>' + data[i].medicine1 + '</td>';
+                html += '<td>' + data[i].medicine2 + '</td>';
+                html += '<td>' + data[i].test1 + '</td>';
+                html += '<td>' + data[i].testReport1 + '</td>';
+
+                html += '</tr>';
+                $("#empTable tbody").append(html);
+            }
+
+        });
+    });
+
+
 </script>

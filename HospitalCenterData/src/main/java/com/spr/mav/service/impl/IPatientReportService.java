@@ -7,6 +7,7 @@ package com.spr.mav.service.impl;
 
 import com.spr.mav.common.ICommonService;
 import com.spr.mav.model.PatientReport;
+import java.util.List;
 
 /**
  *
@@ -14,5 +15,5 @@ import com.spr.mav.model.PatientReport;
  */
 public interface IPatientReportService extends ICommonService<PatientReport> {
 
-    public PatientReport getByNid(int patient_nid);
+    public List<PatientReport> getByNid(int patient_nid);
 }

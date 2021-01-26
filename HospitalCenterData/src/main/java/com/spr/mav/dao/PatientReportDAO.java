@@ -54,8 +54,13 @@ public class PatientReportDAO implements IPatientReportDAO {
     }
 
     @Override
-    public PatientReport getByNid(int patient_nid) {
-        PatientReport patientReport = (PatientReport) sessionFactory.getCurrentSession().get(PatientReport.class, patient_nid);
+    public List<PatientReport> getByNid(int patient_nid) {
+        
+        List<PatientReport> patientReport = sessionFactory.getCurrentSession().createCriteria(PatientReport.class).list();
+        
+        for (PatientReport patientReport1 : patientReport) {
+            System.out.println("...................... " + patientReport1.getMedicine1());
+        }
         sessionFactory.getCurrentSession().flush();
         return patientReport;
     }

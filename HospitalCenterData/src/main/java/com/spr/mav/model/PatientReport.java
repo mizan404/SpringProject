@@ -17,7 +17,7 @@ public class PatientReport {
 
     private int id;
     @Id
-    private String patient_nid;
+    private int patient_nid;
     private String patient_name;
     private String patient_age;
     private String patient_gender;
@@ -84,11 +84,11 @@ public class PatientReport {
         this.id = id;
     }
 
-    public String getPatient_nid() {
+    public int getPatient_nid() {
         return patient_nid;
     }
 
-    public void setPatient_nid(String patient_nid) {
+    public void setPatient_nid(int patient_nid) {
         this.patient_nid = patient_nid;
     }
 

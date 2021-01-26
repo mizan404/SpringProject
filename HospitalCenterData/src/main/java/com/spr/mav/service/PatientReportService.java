@@ -25,7 +25,7 @@ public class PatientReportService implements IPatientReportService {
 
     @Override
     public PatientReport save(HttpServletRequest request) {
-        String patient_nid = request.getParameter("patient_nid");
+        int patient_nid = Integer.parseInt(request.getParameter("patient_nid"));
         String patient_name = request.getParameter("patient_name");
         String patient_age = request.getParameter("patient_age");
         String patient_gender = request.getParameter("patient_gender");
@@ -76,7 +76,6 @@ public class PatientReportService implements IPatientReportService {
         String test_report3 = request.getParameter("testReport3");
         String test_report4 = request.getParameter("testReport4");
         String test_report5 = request.getParameter("testReport5");
-        System.out.println("--------------------------------------- " + test_report5);
 
         PatientReport report = new PatientReport();
         report.setPatient_nid(patient_nid);
@@ -157,8 +156,8 @@ public class PatientReportService implements IPatientReportService {
     }
 
     @Override
-    public PatientReport getByNid(int patient_nid) {
-        System.out.println("----------------- " + patient_nid);
+    public List<PatientReport> getByNid(int patient_nid) {
+        System.out.println("service");
         return patientReportDAO.getByNid(patient_nid);
 
     }
