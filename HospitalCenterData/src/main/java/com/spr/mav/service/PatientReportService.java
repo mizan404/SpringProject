@@ -157,7 +157,7 @@ public class PatientReportService implements IPatientReportService {
 
     @Override
     public List<PatientReport> getByNid(int patient_nid) {
-        System.out.println("service");
+
         return patientReportDAO.getByNid(patient_nid);
 
     }

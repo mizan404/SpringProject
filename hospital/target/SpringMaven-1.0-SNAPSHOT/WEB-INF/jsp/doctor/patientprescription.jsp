@@ -4,7 +4,7 @@
         <div class="container-fluid d-flex flex-column p-0">
             <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="">
                 <!--<div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>-->
-                <div class="sidebar-brand-text mx-3"><span>Admin</span></div>
+                <div class="sidebar-brand-text mx-3"><span >Admin</span></div>
             </a>
             <hr class="sidebar-divider my-0">
             <ul
@@ -84,7 +84,23 @@
                                                     <tr>
                                                         <th>Date</th>
                                                         <th>Diagnosis</th>
+                                                        <th>Diagnosis</th>
+                                                        <th>Diagnosis</th>
+                                                        <th>Diagnosis</th>
+                                                        <th>Diagnosis</th>
                                                         <th>Medicine</th>
+                                                        <th>Medicine</th>
+                                                        <th>Medicine</th>
+                                                        <th>Medicine</th>
+                                                        <th>Medicine</th>
+                                                        <th>Test </th>
+                                                        <th>Result</th>
+                                                        <th>Test </th>
+                                                        <th>Result</th>
+                                                        <th>Test </th>
+                                                        <th>Result</th>
+                                                        <th>Test </th>
+                                                        <th>Result</th>
                                                         <th>Test </th>
                                                         <th>Result</th>
                                                     </tr>
@@ -681,10 +697,25 @@
                 html += '<td>' + data[i].date + '</td>';
                 html += '<td>' + data[i].symptom1 + '</td>';
                 html += '<td>' + data[i].symptom2 + '</td>';
+                html += '<td>' + data[i].symptom3 + '</td>';
+                html += '<td>' + data[i].symptom4 + '</td>';
+                html += '<td>' + data[i].symptom5 + '</td>';
                 html += '<td>' + data[i].medicine1 + '</td>';
                 html += '<td>' + data[i].medicine2 + '</td>';
+                html += '<td>' + data[i].medicine3 + '</td>';
+                html += '<td>' + data[i].medicine4 + '</td>';
+                html += '<td>' + data[i].medicine5 + '</td>';
                 html += '<td>' + data[i].test1 + '</td>';
-                html += '<td>' + data[i].testReport1 + '</td>';
+                html += '<td>' + data[i].test_report1 + '</td>';
+                html += '<td>' + data[i].test2 + '</td>';
+                html += '<td>' + data[i].test_report2 + '</td>';
+                html += '<td>' + data[i].test3 + '</td>';
+                html += '<td>' + data[i].test_report3 + '</td>';
+                html += '<td>' + data[i].test4 + '</td>';
+                html += '<td>' + data[i].test_report4 + '</td>';
+                html += '<td>' + data[i].test5 + '</td>';
+                html += '<td>' + data[i].test_report5 + '</td>';
+
 
                 html += '</tr>';
                 $("#empTable tbody").append(html);

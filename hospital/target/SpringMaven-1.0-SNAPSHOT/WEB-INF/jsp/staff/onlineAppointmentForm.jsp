@@ -58,6 +58,7 @@
 
                                             <!--<th id="trs-hd" class="col-lg-2" style="width: 558px;">Approve</th>-->
                                             <th id="trs-hd" class="col-lg-2" style="width: 558px;">Action</th>
+                                            <th id="trs-hd" class="col-lg-2" style="width: 558px;">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -74,11 +75,11 @@
 
 
 
-                                                <!--                                                <td><a href="#" ><button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Approve </button></a>  
-                                                
-                                                                                                                                                    <button class="btn btn-success" style="margin-left: 5px;width: 36px;" type="submit"><i class="fa fa-check" style="font-size: 15px;"></i></button>
-                                                                                                                                                    <button class="btn btn-danger" style="margin-left: 5px;width: 36px;" type="submit"><i class="fa fa-trash" style="font-size: 15px;"></i></button>
-                                                                                                </td>-->
+                                                <td>
+                                                    <a href="#" ><button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Approved</button></a>  
+
+
+                                                </td>
                                                 <td><a href="/onlineappointment/appointmentform/${onlineAppointment.id}" ><button class="btn btn-info mb-1"><i class="fa fa-edit" aria-hidden="true"></i></button></a>  
                                                     <a href="/adminDelete/${onlineAppointment.id}" ><button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></a>
 
@@ -89,7 +90,7 @@
                                         </c:forEach>
                                     </tbody>
                                 </table>
-
+                                <!----------------------------------------------------------..............................................................-----> 
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -101,13 +102,14 @@
                                             </div>
                                             <div class="modal-body">
 
-                                                <form>
+
+
+
+                                                <form action="" method="POST">
                                                     <div class="form-group">
                                                         <div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <span class="text-primary input-group-text"><i class="fa fa-envelope-o"></i></span>
-                                                            </div><input class="form-control" type="email" required="" placeholder="Email">
-                                                            <div class="input-group-append"></div>
+                                                            <input class="form-control" type="text" name="patient_nid">
+
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
@@ -115,14 +117,19 @@
                                                             <div class="input-group-prepend">
                                                                 <span class="text-primary input-group-text"><i class="fa fa-lock"></i></span>
                                                             </div><input class="form-control" type="password" required="" placeholder="Password">
-                                                            <div class="input-group-append"></div>
+                                                            <div class="input-group-append">
+
+                                                            </div>
                                                         </div>
                                                     </div>
+
                                                     <div class="form-group">
                                                         <label for="message-text" class="col-form-label">Message:</label>
                                                         <textarea class="form-control" id="message-text"></textarea>
                                                     </div>
-                                                    <div class="form-group"><button class="btn btn-primary btn-lg text-white" style="width: 100%;" type="button">Log in</button></div>
+                                                    <div class="form-group">
+                                                        <button class="btn btn-primary btn-lg text-white" style="width: 100%;" type="button">Log in</button>
+                                                    </div>
                                                 </form>
 
 
@@ -139,7 +146,7 @@
                                     </div>
                                 </div>
 
-
+                                <!--...............................................................................................--> 
 
 
                             </div>

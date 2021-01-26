@@ -154,13 +154,11 @@ public class IndexController {
     @RequestMapping(value = "/getAllPatientReportByNid", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String getAllPatientReportByNid(HttpServletRequest request) {
         String patient_nid = request.getParameter("patient_nid");
-        System.out.println("./..................... " + patient_nid);
+
         GsonBuilder gson = new GsonBuilder();
         Gson g = gson.create();
         List<PatientReport> patientReport = patientReportService.getByNid(Integer.parseInt(patient_nid));
-        for (PatientReport patientReport1 : patientReport) {
-            System.out.println(patientReport1.getMedicine1() + "       ......");
-        }
+
         return g.toJson(patientReport);
     }
 

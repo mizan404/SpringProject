@@ -8,6 +8,7 @@ package com.spr.mav.dao;
 import com.spr.mav.dao.impl.IPatientReportDAO;
 import com.spr.mav.model.PatientReport;
 import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -55,12 +56,11 @@ public class PatientReportDAO implements IPatientReportDAO {
 
     @Override
     public List<PatientReport> getByNid(int patient_nid) {
-        
-        List<PatientReport> patientReport = sessionFactory.getCurrentSession().createCriteria(PatientReport.class).list();
-        
-        for (PatientReport patientReport1 : patientReport) {
-            System.out.println("...................... " + patientReport1.getMedicine1());
-        }
+        String hqlQuery = "from PatientReport where patient_nid=:patient_nid";
+        Query query = sessionFactory.getCurrentSession().createQuery(hqlQuery);
+        query.setParameter("patient_nid", patient_nid);
+        List<PatientReport> patientReport = query.list();
+
         sessionFactory.getCurrentSession().flush();
         return patientReport;
     }
