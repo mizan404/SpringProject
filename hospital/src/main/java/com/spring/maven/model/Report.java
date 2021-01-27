@@ -26,6 +26,8 @@ public class Report {
     private String weight;
     private String blood_pressure;
     private String date;
+    
+    
 
     // For Symptoms Table
     private String symptom1;

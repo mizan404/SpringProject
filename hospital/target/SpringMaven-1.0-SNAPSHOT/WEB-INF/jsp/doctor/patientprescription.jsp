@@ -41,6 +41,19 @@
                 <form action="/patientSave" method="post" style="margin-bottom: 10px;">
                     <div class="form-row">
                         <div class="col">
+                            <div class="form-row">
+                                <div class="col-md-4">
+                                    Doctor ID: 
+                                    <input class="form-control" type="text" id="id" />
+                                </div>
+                                <div class="col-md-1">
+                                    <button class="btn btn-primary border rounded-0" type="button" id="SearchDoctor" ><strong>Select Doctor</strong></button>
+                                </div>
+                                <div class="col-md-4">
+                                    Doctor Name: <input class="form-control" type="text"  name="doctor_name" id="doctor_name"/>
+
+                                </div>
+                            </div>
                             <fieldset>
                                 <legend>Pateint Details</legend>
                                 <div class="form-row">
@@ -67,6 +80,7 @@
                                     <div class="col"><label>Date</label>
                                         <input class="form-control" type="date" name="date"/></div>
                                 </div>
+
                             </fieldset>
                         </div>
                     </div>
@@ -610,14 +624,15 @@
                                         <option value="	BT Shunt, Coarctation of Aorta, Vascular Procedure">BT Shunt, Coarctation of Aorta, Vascular Procedure</option>
                                         <option value="Chest (P-A View) for any Paravertebral Soft Tissue Mass"> Chest (P-A View) for any Paravertebral Soft Tissue Mass</option>
                                         <option value="Lumbo-Sacral Spine-B/V"> Lumbo-Sacral Spine-B/V</option>
-                                        <option value="  USG- Upper/Lower Abdomen, Pregnancy Profile">   USG- Upper/Lower Abdomen, Pregnancy Profile</option>
+                                        <option value="USG- Upper/Lower Abdomen, Pregnancy Profile">   USG- Upper/Lower Abdomen, Pregnancy Profile</option>
 
                                         </select>
                                         </td>
                                         </tr>
                                         </tbody>
-                                        <input type="text"  name="doctor_nid" id="doctor_nid"/>
-                                        <input type="hidden"  name="doctor_name" id="doctor_name"/>
+
+                                        <input type="hidden"  name="doctor_nid" id="doctor_nid"/>
+                                        <!--<input type="hidden"  name="doctor_name" id="doctor_name"/>-->
                                         <input type="hidden"  name="doctor_degree" id="doctor_degree"/>
                                         <input type="hidden"  name="doctor_designation" id="doctor_designation"/>
                                         <input type="hidden"  name="hospital_name" id="hospital_name"/>
@@ -643,19 +658,21 @@
 
 <jsp:include page="/WEB-INF/jsp/common/home/footer.jsp" />
 <!--
+-->
 <script>
 
-    $("#searchReport").click(function () {
-        $.get("http://localhost:8080/info/getPatientReportByNid/" + $("#patient_nid").val(), function (data, status) {
+    $("#SearchDoctor").click(function () {
+        $.get("http://localhost:8080/getDoctorById/" + $("#id").val(), function (data, status) {
 //            console.log(data);
 
-            $("#patient_name").val(data.patient_name);
-            $("#patient_gender").val(data.patient_gender);
-            $("#patient_age").val(data.patient_age);
-            $("#patient_address").val(data.patient_address);
+            $("#doctor_nid").val(data.doctor_nid);
+            $("#doctor_name").val(data.doctor_name);
+            $("#doctor_degree").val(data.doctor_degree);
+            $("#doctor_designation").val(data.doctor_designation);
+            $("#hospital_name").val(data.hospital_name);
         });
     });
-</script>-->
+</script>
 <!--<script>
     $("#btnViewAll").on("click", function () {
 
@@ -686,7 +703,7 @@
 
 </script>-->
 
-<script>
+<!--<script>
     $("#selectDoctor").change(function () {
 
         $.ajax({
@@ -694,7 +711,7 @@
             type: 'GET',
             dataType: 'json',
             success: function (data) {
-                alert(data.doctor_nid);
+
 
                 $("#doctor_nid").val(data.doctor_nid);
                 $("#doctor_name").val(data.doctor_name);
@@ -706,7 +723,7 @@
         });
 
     });
-</script>
+</script>-->
 
 <!--for search--> 
 <!--<script>

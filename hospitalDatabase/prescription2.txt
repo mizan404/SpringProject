@@ -14,7 +14,7 @@ CREATE TABLE  `hospitaldata`.`prescription` (
   `doctor_name` varchar(45) NOT NULL,
   `doctor_degree` varchar(45) NOT NULL,
   `doctor_designation` varchar(45) NOT NULL,
-  `hospital_number` varchar(45) NOT NULL,
+  `hospital_name` varchar(45) NOT NULL,
   `symptom1` varchar(45) NOT NULL,
   `symptom2` varchar(45) NOT NULL,
   `symptom3` varchar(45) NOT NULL,

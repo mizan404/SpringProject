@@ -76,7 +76,7 @@
 
 
                                                 <td>
-                                                    <a href="#" ><button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Approved</button></a>  
+                                                    <button class="btn btn-warning" onclick="viewData('${onlineAppointment.id}','${onlineAppointment.patient_nid}','${onlineAppointment.patient_problem}','${onlineAppointment.contact_number}')" data-toggle="modal" data-target="#exampleModal">Approved</button>
 
 
                                                 </td>
@@ -108,7 +108,7 @@
                                                 <form action="" method="POST">
                                                     <div class="form-group">
                                                         <div class="input-group">
-                                                            <input class="form-control" type="text" name="patient_nid">
+                                                            <input class="form-control" type="text" id="patient_nid" name="patient_nid">
 
                                                         </div>
                                                     </div>
@@ -116,7 +116,7 @@
                                                         <div class="input-group">
                                                             <div class="input-group-prepend">
                                                                 <span class="text-primary input-group-text"><i class="fa fa-lock"></i></span>
-                                                            </div><input class="form-control" type="password" required="" placeholder="Password">
+                                                            </div><input class="form-control" type="text" required="" id="patient_problem">
                                                             <div class="input-group-append">
 
                                                             </div>
@@ -169,9 +169,17 @@
 
 
 
-
+<script>
+    
+    function viewData(a,b,c,d){
+        $("#patient_nid").val(b);
+        $("#patient_problem").val(c);
+    }
+    
+</script>
 
 <jsp:include page="/WEB-INF/jsp/common/home/footer.jsp" />
+
 
 
 

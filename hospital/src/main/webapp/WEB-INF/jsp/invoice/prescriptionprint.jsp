@@ -167,7 +167,9 @@
                                 <tbody class="text-left">
                                     <tr class="text-left">
                                         <td class="text-left" style="width: 100px;padding: 13px;font-size: 20px;">Weight:&nbsp;</td>
-                                        <td><input class="form-control-plaintext" type="text" readonly="" style="padding-top: 0px;padding-bottom: 0px;font-size: 20px;" id="weight"/></td>
+                                        <td>
+                                            <input class="form-control-plaintext" type="text" readonly="" style="padding-top: 0px;padding-bottom: 0px;font-size: 20px;" id="weight"/>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -352,7 +354,12 @@
                 </div>
                 <div class="row" style="margin-right: 0px;margin-left: 0px;margin-top: 10px;">
                     <div class="col" style="margin-bottom: 20px;">
-                        <p>Doctor Name:&nbsp;</p>
+                        <input class="form-control-plaintext" type="text" readonly="" style="padding-top: 0px;padding-bottom: 0px;font-size: 12px;" id="doctor_name"/>
+                        <input class="form-control-plaintext" type="text" readonly="" style="padding-top: 0px;padding-bottom: 0px;font-size: 12px;" id="doctor_degree"/>
+                        <input class="form-control-plaintext" type="text" readonly="" style="padding-top: 0px;padding-bottom: 0px;font-size: 12px;" id="doctor_designation"/>
+                        <input class="form-control-plaintext" type="text" readonly="" style="padding-top: 0px;padding-bottom: 0px;font-size: 12px;" id="hospital_name"/>
+
+
                     </div>
                     <div class="col-3" style="margin-bottom: 20px;">
                         <button class="btn btn-primary hidden-print" onclick="myFunction()" > Print</button>
@@ -403,6 +410,11 @@
             $("#temperature").val(data.temperature);
             $("#weight").val(data.weight);
             $("#blood_pressure").val(data.blood_pressure);
+            $("#doctor_nid").val(data.doctor_nid);
+            $("#doctor_name").val(data.doctor_name);
+            $("#doctor_degree").val(data.doctor_degree);
+            $("#doctor_designation").val(data.doctor_designation);
+            $("#hospital_name").val(data.hospital_name);
 
             $("#symptom1").val(data.symptom1);
             $("#symptom2").val(data.symptom2);

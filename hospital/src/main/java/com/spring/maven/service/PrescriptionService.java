@@ -40,6 +40,12 @@ public class PrescriptionService implements IPrescriptionService {
         String blood_pressure = request.getParameter("blood_pressure");
         String date = request.getParameter("date");
 
+        int doctor_nid = Integer.parseInt(request.getParameter("doctor_nid"));
+        String doctor_name = request.getParameter("doctor_name");
+        String doctor_degree = request.getParameter("doctor_degree");
+        String doctor_designation = request.getParameter("doctor_designation");
+        String hospital_name = request.getParameter("hospital_name");
+
         String symptom1 = request.getParameter("symptom1");
         String symptom2 = request.getParameter("symptom2");
         String symptom3 = request.getParameter("symptom3");
@@ -87,6 +93,12 @@ public class PrescriptionService implements IPrescriptionService {
         prescription.setWeight(weight);
         prescription.setBlood_pressure(blood_pressure);
         prescription.setDate(date);
+        
+        prescription.setDoctor_nid(doctor_nid);
+        prescription.setDoctor_name(doctor_name);
+        prescription.setDoctor_degree(doctor_degree);
+        prescription.setDoctor_designation(doctor_designation);
+        prescription.setHospital_name(hospital_name);
 
         prescription.setSymptom1(symptom1);
         prescription.setSymptom2(symptom2);
@@ -157,7 +169,6 @@ public class PrescriptionService implements IPrescriptionService {
         return prescriptionDAO.getPrescriptionData(patient_nid);
     }
 
-    
 //    @RequestMapping(value = "/report", method = RequestMethod.POST)
 //    public ModelAndView report(@RequestParam("patient_nid") int patient_nid) {
 //
@@ -168,5 +179,4 @@ public class PrescriptionService implements IPrescriptionService {
 //        return new ModelAndView("invoice/reportprint");
 //
 //    }
-    
 }

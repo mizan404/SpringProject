@@ -200,6 +200,13 @@
                                     <input type="hidden"  name="blood_pressure" id="blood_pressure"/>
                                     <input type="hidden"  name="date" id="date"/>
 
+                                    <input type="hidden"  name="doctor_nid" id="doctor_nid"/>
+                                    <input type="hidden"  name="doctor_name" id="doctor_name"/>
+                                    <input type="hidden"  name="doctor_degree" id="doctor_degree"/>
+                                    <input type="hidden"  name="doctor_designation" id="doctor_designation"/>
+                                    <input type="hidden"  name="hospital_name" id="hospital_name"/>
+
+
                                     <input type="hidden"  name="symptom1" id="symptom1"/>
                                     <input type="hidden"  name="symptom2" id="symptom2"/>
                                     <input type="hidden"  name="symptom3" id="symptom3"/>
@@ -294,6 +301,11 @@
             $("#weight").val(data.weight);
             $("#blood_pressure").val(data.blood_pressure);
             $("#date").val(data.date);
+            $("#doctor_nid").val(data.doctor_nid);
+            $("#doctor_name").val(data.doctor_name);
+            $("#doctor_degree").val(data.doctor_degree);
+            $("#doctor_designation").val(data.doctor_designation);
+            $("#hospital_name").val(data.hospital_name);
             $("#symptom1").val(data.symptom1);
             $("#symptom2").val(data.symptom2);
             $("#symptom3").val(data.symptom3);
@@ -345,6 +357,11 @@
                     weight: $("#weight").val(),
                     blood_pressure: $("#blood_pressure").val(),
                     date: $("#date").val(),
+//                    doctor_nid: $("#doctor_nid").val(),
+//                    doctor_name: $("#doctor_nid").val(),
+//                    doctor_nid: $("#doctor_nid").val(),
+//                    doctor_nid: $("#doctor_nid").val(),
+//                    doctor_nid: $("#doctor_nid").val(),
                     symptom1: $("#symptom1").val(),
                     symptom2: $("#symptom2").val(),
                     symptom3: $("#symptom3").val(),
