@@ -325,7 +325,8 @@
             $("#test4").val(data.test4);
             $("#test5").val(data.test5);
         });
-    });</script>
+    });
+</script>
 
 <!------------------------------------------------------------------------------>
 <!-- Post Rest API to CenterDatabase-->

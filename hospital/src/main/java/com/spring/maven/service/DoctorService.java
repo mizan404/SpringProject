@@ -65,17 +65,19 @@ public class DoctorService implements IDoctorService {
 
     @Override
     public Doctor delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return doctorDAO.delete(id);
     }
 
     @Override
     public List<Doctor> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Doctor> doctors = doctorDAO.getAll();
+        return doctors;
     }
 
     @Override
     public Doctor getById(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        return doctorDAO.getById(id);
     }
 
 }

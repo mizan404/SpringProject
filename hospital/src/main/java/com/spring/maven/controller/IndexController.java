@@ -7,9 +7,11 @@ package com.spring.maven.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.spring.maven.model.Doctor;
 import com.spring.maven.model.HospitalAppointment;
 import com.spring.maven.model.OnlineAppointment;
 import com.spring.maven.model.Prescription;
+import com.spring.maven.service.impl.IDoctorService;
 import com.spring.maven.service.impl.IHospitalAppointmentService;
 import com.spring.maven.service.impl.IOnlineAppointmentService;
 import com.spring.maven.service.impl.IPrescriptionService;
@@ -17,6 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,6 +41,9 @@ public class IndexController {
 
     @Autowired
     IPrescriptionService prescriptionService;
+
+    @Autowired
+    IDoctorService doctorService;
 
     @RequestMapping("/")
     public ModelAndView index() {
@@ -169,5 +175,14 @@ public class IndexController {
         map.put("prescriptions", prescriptions);
         return new ModelAndView("invoice/reportprint", "map", map);
 
+    }
+// For Doctor Rest API
+
+    @RequestMapping(value = "getDoctorById/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String getDoctorById(@PathVariable("id") int id) {
+        GsonBuilder gson = new GsonBuilder();
+        Gson g = gson.create();
+        Doctor doctor = doctorService.getById(id);
+        return g.toJson(doctor);
     }
 }

@@ -34,22 +34,31 @@ public class DoctorDAO implements IDoctorDAO {
 
     @Override
     public Doctor update(Doctor t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        sessionFactory.getCurrentSession().saveOrUpdate(t);
+        sessionFactory.getCurrentSession().flush();
+        return t;
     }
 
     @Override
     public Doctor delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Doctor doctor = (Doctor) sessionFactory.getCurrentSession().load(Doctor.class, id);
+        sessionFactory.getCurrentSession().delete(doctor);
+        sessionFactory.getCurrentSession().flush();
+        return doctor;
     }
 
     @Override
     public List<Doctor> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Doctor> doctors = sessionFactory.getCurrentSession().createCriteria(Doctor.class).list();
+        sessionFactory.getCurrentSession().flush();
+        return doctors;
     }
 
     @Override
     public Doctor getById(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Doctor doctor = (Doctor) sessionFactory.getCurrentSession().get(Doctor.class, id);
+        sessionFactory.getCurrentSession().flush();
+        return doctor;
     }
 
 }

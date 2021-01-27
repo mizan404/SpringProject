@@ -616,6 +616,12 @@
                                         </td>
                                         </tr>
                                         </tbody>
+                                        <input type="text"  name="doctor_nid" id="doctor_nid"/>
+                                        <input type="hidden"  name="doctor_name" id="doctor_name"/>
+                                        <input type="hidden"  name="doctor_degree" id="doctor_degree"/>
+                                        <input type="hidden"  name="doctor_designation" id="doctor_designation"/>
+                                        <input type="hidden"  name="hospital_name" id="hospital_name"/>
+
                                     </table>
                                 </div>
                             </fieldset>
@@ -679,6 +685,60 @@
 
 
 </script>-->
+
+<script>
+    $("#selectDoctor").change(function () {
+
+        $.ajax({
+            url: 'getDoctorById/' + this.value,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                alert(data.doctor_nid);
+
+                $("#doctor_nid").val(data.doctor_nid);
+                $("#doctor_name").val(data.doctor_name);
+                $("#doctor_degree").val(data.doctor_degree);
+                $("#doctor_designation").val(data.doctor_designation);
+                $("#hospital_name").val(data.hospital_name);
+
+            }
+        });
+
+    });
+</script>
+
+<!--for search--> 
+<!--<script>
+
+    $("#btnSearch").click(function () {
+        $.get("http://localhost:8080/getPrescriptionByNid/" + $("#patient_nid").val(), function (data, status) {
+//            console.log(data);
+//            alert(data); 
+            $("#patient_name").val(data.patient_name);
+            $("#id").val(data.id);
+            $("#date").val(data.date);
+            $("#patient_age").val(data.patient_age);
+            $("#patient_gender").val(data.patient_gender);
+            $("#patient_address").val(data.patient_address);
+            $("#temperature").val(data.temperature);
+            $("#weight").val(data.weight);
+            $("#blood_pressure").val(data.blood_pressure);
+            $("#date").val(data.date);
+            $("#symptom1").val(data.symptom1);
+            $("#symptom2").val(data.symptom2);
+            $("#symptom3").val(data.symptom3);
+            $("#symptom4").val(data.symptom4);
+            $("#symptom5").val(data.symptom5);
+            $("#symptom_duration1").val(data.symptom_duration1);
+            $("#symptom_duration2").val(data.symptom_duration2);
+            $("#symptom_duration3").val(data.symptom_duration3);
+            $("#symptom_duration4").val(data.symptom_duration4);
+            $("#symptom_duration5").val(data.symptom_duration5);
+        });
+    });
+</script>-->
+
 <script>
     $("#btnViewAll").on("click", function () {
 
