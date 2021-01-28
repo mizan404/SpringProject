@@ -7,13 +7,23 @@
     </div>
 </div>
 <div class="login-clean" style="margin-top: 0px;background-color: rgb(255,255,255);">
-    <form action="doctor/dashboard"class="shadow-lg" method="post">
+    <form name='loginForm' action="/doctor/dashboard" method='POST' class="shadow-lg">
 
 
-        <div class="form-group">  <input class="form-control" type="number" name="nid" placeholder="NID"></div>
-        <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name"></div>
-        <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-        <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>
+        <div class="form-group">
+            <input class="form-control" type="text" name="username" placeholder="USERNAME">
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" type="password" name="password" placeholder="PASSWORD">
+        </div>
+        <!--<div class="form-group"><a href="/admin/dash" ><button class="btn btn-primary btn-block" type="submit">Log In</button></a></div>-->
+        <div class="col">
+            <input name="submit" type="submit" value="submit" class="btn btn-success"/>
+            <input name="reset" type="reset" class="btn btn-warning"/>
+        </div>
     </form>
 </div>
 <jsp:include page="/WEB-INF/jsp/common/main/footer.jsp" />
+
+

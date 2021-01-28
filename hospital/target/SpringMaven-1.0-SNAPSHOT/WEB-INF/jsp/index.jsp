@@ -36,31 +36,31 @@
         <div class="container" style="margin-top: 100px;height: 60px;">
             <p class="text-center" style="height: 20px;font-size: 30px;"><strong>Hospital Management and Information System</strong></p>
         </div>
-        <div class="container" style="margin-top: 35px;height: 575px;">
-            <div class="row">
-                <div class="col" style="width: 550px;"><img src="/resources/vendor/css/assets/img/hospital.png" style="width: 550px;"></div>
-                <div class="col">
-                    <p class="text-justify" style="margin-top: 30px;font-size: 16px;">A hospital management information system (HMIS) is an element of<br>health informatics that focuses mainly on the administration needs of<br>hospitals. In many implementations, this is a comprehensive, integrated<br>information system
-                        designed to manage all the aspects of a hospital. One&nbsp;of the most important issues is health care services.<br>Hospital management information system (HMIS) is a province-wide<br>initiative designed to improve access to patient
-                        information through a<br>central electronic information system. HIS goal is to streamline patient<br>information flow and its accessibility for doctors and other health care<br>providers. These changes in service will improve patient
-                        care quality and<br>patient safety over time.<br>The patient carries system record patient information, patient laboratory<br>test results, and patient doctor information. Doctors can access easily<br>person information, test results,
-                        and previous prescriptions. Patient<br>schedule organization and early warning systems can be provided by<br>related systems <br><br><br><br><br></p>
-                </div>
-            </div>
-        </div>
-        <div class="shadow-lg footer-clean">
-            <footer>
-                <div class="container">
-                    <div class="row justify-content-center">
-
-
-                        <h3>Developed By Md. Mizanur Rahman</h3>
-                        <br>
-
+        <!--        <div class="container" style="margin-top: 35px;height: 575px;">
+                    <div class="row">
+                        <div class="col" style="width: 550px;"><img src="/resources/vendor/css/assets/img/hospital.png" style="width: 550px;"></div>
+                        <div class="col">
+                            <p class="text-justify" style="margin-top: 30px;font-size: 16px;">A hospital management information system (HMIS) is an element of<br>health informatics that focuses mainly on the administration needs of<br>hospitals. In many implementations, this is a comprehensive, integrated<br>information system
+                                designed to manage all the aspects of a hospital. One&nbsp;of the most important issues is health care services.<br>Hospital management information system (HMIS) is a province-wide<br>initiative designed to improve access to patient
+                                information through a<br>central electronic information system. HIS goal is to streamline patient<br>information flow and its accessibility for doctors and other health care<br>providers. These changes in service will improve patient
+                                care quality and<br>patient safety over time.<br>The patient carries system record patient information, patient laboratory<br>test results, and patient doctor information. Doctors can access easily<br>person information, test results,
+                                and previous prescriptions. Patient<br>schedule organization and early warning systems can be provided by<br>related systems <br><br><br><br><br></p>
+                        </div>
                     </div>
                 </div>
-            </footer>
-        </div>
+                <div class="shadow-lg footer-clean">
+                    <footer>
+                        <div class="container">
+                            <div class="row justify-content-center">
+        
+        
+                                <h3>Developed By Md. Mizanur Rahman</h3>
+                                <br>
+        
+                            </div>
+                        </div>
+                    </footer>
+                </div>-->
         <script src="/resources/vendor/css/assets/js/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="/resources/vendor/css/assets/bootstrap/js/bootstrap.min.js"></script>

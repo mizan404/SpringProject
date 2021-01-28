@@ -10,10 +10,14 @@
         <intercept-url pattern="/resources/**" access="permitAll" />
         <intercept-url pattern="/hello*"
                        access="hasAnyRole('ROLE_ADMIN','ROLE_USER')" />
+        
         <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/staff**" access="hasRole('ROLE_STAFF')" />
-        <form-login login-page="/login" default-target-url="/helloworld"
+        
+        
+        
+        <form-login login-page="/login" default-target-url="/dashboard"
                     authentication-failure-url="/loginError" />
+        
         <logout logout-success-url="/" logout-url="/j_spring_security_logout" />
         <csrf disabled="true" />
         <access-denied-handler error-page="/403" />
@@ -22,7 +26,8 @@
         <authentication-provider>
             <jdbc-user-service data-source-ref="dataSource"
                                users-by-username-query="select username, password, active from users where username=?"
-                               authorities-by-username-query="select username, role from user_roles where username=?" />
+                               authorities-by-username-query="select username, role from user_roles where username=?" 
+            />
         </authentication-provider>
     </authentication-manager>
 </beans:beans>

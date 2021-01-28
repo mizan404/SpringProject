@@ -5,6 +5,7 @@
  */
 package com.spring.maven.controller;
 
+import java.security.Principal;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -14,42 +15,48 @@ import org.springframework.web.servlet.ModelAndView;
  * @author TCLD
  */
 @RestController
-@RequestMapping("admin")
+//@RequestMapping("admin")
 public class DashBoardController {
 
-    @RequestMapping("/dashboard")
-    public ModelAndView dashBoard() {
-        return new ModelAndView("/dashBoard/dashBoard");
-    }
-
+//    @RequestMapping("/dashboard")
+//    public ModelAndView dashBoard() {
+//        return new ModelAndView("/dashBoard/dashBoard");
+//    }
     @RequestMapping("/doctorpage")
-    public ModelAndView doctorPage() {
-        return new ModelAndView("/doctor/doctorpage");
+    public ModelAndView doctorPage(Principal principal) {
+        String loggedInUserName = principal.getName();
+
+        return new ModelAndView("/doctor/doctorpage", "userName", loggedInUserName);
     }
 
     @RequestMapping("/staffpage")
-    public ModelAndView staffPage() {
-        return new ModelAndView("/staff/staffpage");
+    public ModelAndView staffPage(Principal principal) {
+        String loggedInUserName = principal.getName();
+        return new ModelAndView("/staff/staffpage", "userName", loggedInUserName);
     }
 
     @RequestMapping("/departmentpage")
-    public ModelAndView deparmentPage() {
-        return new ModelAndView("/department/departmentpage");
+    public ModelAndView deparmentPage(Principal principal) {
+        String loggedInUserName = principal.getName();
+        return new ModelAndView("/department/departmentpage", "userName", loggedInUserName);
     }
 
     @RequestMapping("/laboratorypage")
-    public ModelAndView laboratoryPage() {
-        return new ModelAndView("/laboratory/laboratoryPage");
+    public ModelAndView laboratoryPage(Principal principal) {
+        String loggedInUserName = principal.getName();
+        return new ModelAndView("/laboratory/laboratoryPage", "userName", loggedInUserName);
     }
 
     @RequestMapping("/medicinepage")
-    public ModelAndView medicinePage() {
-        return new ModelAndView("/medicine/medicinepage");
+    public ModelAndView medicinePage(Principal principal) {
+        String loggedInUserName = principal.getName();
+        return new ModelAndView("/medicine/medicinepage", "userName", loggedInUserName);
     }
 
     @RequestMapping("/adminpage")
-    public ModelAndView adminPage() {
-        return new ModelAndView("/admin/adminpage");
+    public ModelAndView adminPage(Principal principal) {
+        String loggedInUserName = principal.getName();
+        return new ModelAndView("/admin/adminpage", "userName", loggedInUserName);
     }
 
 }

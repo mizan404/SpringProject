@@ -1,36 +1,29 @@
+<jsp:include page="/WEB-INF/jsp/common/main/header.jsp" />
 
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <form name='loginForm' action="/login" method='POST'>
+<div class="container" style="margin-top: 100px;">
+    <div class="row">
+        <div class="col">
+            <p class="text-center" style="font-size: 21px;"><strong>Admin Login Page</strong></p>
+        </div>
+    </div>
+</div>
+<div class="login-clean" style="margin-top: 0px;background-color: rgb(255,255,255);">
+    <form name='loginForm' action="/login" method='POST' class="shadow-lg">
 
-            <table>
-                <tr>
-                    <td>User:</td>
-                    <td><input type='text' name='username' value=''>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Password:</td>
-                    <td><input type='password' name='password' />
-                    </td>
-                </tr>
-                <tr>
-                    <td><input name="submit" type="submit"
-                               value="submit" />
-                    </td>
-                    <td><input name="reset" type="reset" />
-                    </td>
-                </tr>
-            </table>
 
-        </form>
+        <div class="form-group">
+            <input class="form-control" type="text" name="username" placeholder="USERNAME">
+        </div>
 
-    </body>
-</html>
+        <div class="form-group">
+            <input class="form-control" type="password" name="password" placeholder="PASSWORD">
+        </div>
+        <!--<div class="form-group"><a href="/admin/dash" ><button class="btn btn-primary btn-block" type="submit">Log In</button></a></div>-->
+        <div class="col">
+            <input name="submit" type="submit" value="submit" class="btn btn-success"/>
+            <input name="reset" type="reset" class="btn btn-warning"/>
+        </div>
+    </form>
+</div>
+<jsp:include page="/WEB-INF/jsp/common/main/footer.jsp" />

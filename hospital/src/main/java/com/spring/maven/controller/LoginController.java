@@ -14,11 +14,11 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginController {
 
-    @RequestMapping("/helloworld")
+    @RequestMapping("/dashboard")
     public ModelAndView hello(ModelMap model, Principal principal) {
 
         String loggedInUserName = principal.getName();
-//        System.out.println(loggedInUserName + "''''[");
+
         return new ModelAndView("dashBoard/dashBoard", "userName", loggedInUserName);
     }
 
@@ -30,6 +30,22 @@ public class LoginController {
         return new ModelAndView("dashBoard/dashBoard", "userName", loggedInUserName);
     }
 
+//    @RequestMapping("/doctor-dashboard")
+//    public ModelAndView dhello(ModelMap model, Principal principal) {
+//
+//        String loggedInUserName = principal.getName();
+//
+//        return new ModelAndView("doctor/doctordashboard", "userName", loggedInUserName);
+//    }
+//
+//    @RequestMapping("/doctor")
+//    public ModelAndView helloDoctor(ModelMap model, Principal principal) {
+//
+//        String loggedInUserName = principal.getName();
+//
+//        return new ModelAndView("doctor/doctordashboard", "userName", loggedInUserName);
+//    }
+
 //    @RequestMapping("/staff")
 //    public ModelAndView helloStaff(ModelMap model, Principal principal) {
 //
@@ -37,6 +53,17 @@ public class LoginController {
 //
 //        return new ModelAndView("doctor/doctorpage", "userName", loggedInUserName);
 //    }
+//    @RequestMapping(value = "/d-login", method = RequestMethod.GET)
+//    public String dlogin(ModelMap model) {
+//        return "commonlogin/doctorlogin";
+//    }
+//
+//    @RequestMapping(value = "/d-loginError", method = RequestMethod.GET)
+//    public String dloginError(ModelMap model) {
+//        model.addAttribute("error", "true");
+//        return "commonlogin/doctorlogin";
+//    }
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(ModelMap model) {
         return "commonlogin/login";

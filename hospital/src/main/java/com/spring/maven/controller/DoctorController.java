@@ -44,7 +44,7 @@ public class DoctorController implements IDoctorController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ModelAndView save(HttpServletRequest request) {
         doctorService.save(request);
-        return new ModelAndView("redirect:/admin/doctorpage");
+        return new ModelAndView("redirect:/doctorpage");
 
     }
 

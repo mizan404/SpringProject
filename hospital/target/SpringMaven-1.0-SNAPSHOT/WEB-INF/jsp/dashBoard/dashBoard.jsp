@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <html>
 
     <head>
@@ -10,6 +11,7 @@
         <link rel="stylesheet" href="/resources/vendor/css/assets/fonts/fontawesome-all.min.css">
         <link rel="stylesheet" href="/resources/vendor/css/assets/css/untitled-1.css">
         <link rel="stylesheet" href="/resources/vendor/css/assets/css/untitled.css">
+
     </head>
 
     <body id="page-top" style="background-color: rgb(255,255,255);">
@@ -35,13 +37,37 @@
                         <div class="container-fluid">
                             <p style="color: rgb(66,87,241);font-size: 25px;margin-top: 10px;margin-bottom: 16px;margin-left: 120px;"><strong>Hospital Management And Information System</strong></p>
                             <ul class="nav navbar-nav flex-nowrap ml-auto">
-                                <li class="nav-item dropdown no-arrow" role="presentation"><a class="nav-link" href="/login"><button class="btn btn-primary" type="button">Logout</button></a></li>
+                                <li class="mb-6">
+
+
+                                </li>
+                                <li>
+                                    <c:url value="/j_spring_security_logout" var="logoutUrl" />
+                                    <a href="${logoutUrl}"><button class="btn btn-primary" type="button">Logout</button></a>
+                                </li>
+
                             </ul>
                         </div>
                     </nav>
+                                
+                                
                     <div class="container-fluid">
+                        
+                        
+                        
                         <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                            <h3 class="text-dark mb-0">Dashboard</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href=""><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report</a></div>
+                            <h3 class="text-warning mb-0">Dashboard</h3>
+                            <p class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="">
+
+
+                                ${userName} 
+                            </p>
+                        </div>
+                            
+                            
+                            
+                            
+                            
                         <div class="row">
                             <div class="col-md-6 col-xl-3 mb-4">
                                 <div class="card shadow border-left-primary py-2">

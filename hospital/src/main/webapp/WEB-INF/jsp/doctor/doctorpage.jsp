@@ -25,38 +25,32 @@
     <div class="d-flex flex-column" id="content-wrapper">
         <div id="content">
             <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
 
-                    <nav class="navbar navbar-light  ">
-                        <div class="container">
-                            <p style="color: rgb(66,87,241);font-size: 20px; float: left"><strong> ${username}</strong></p>
-                            <ul class="nav navbar-nav flex-nowrap ml-auto">
-
-                            </ul>
-                        </div>
-                    </nav>
-                    <ul class="nav navbar-nav flex-nowrap ml-auto">
-                        <div class="d-none d-sm-block topbar-divider"></div>
-                        <li class="nav-item dropdown no-arrow" role="presentation"><c:url value="/j_spring_security_logout" var="logoutUrl" />
-                            <a href="${logoutUrl}">Log Out</a>
-                        </li>
-                    </ul>
-                </div>
             </nav>
             <div class="container-fluid">
+
+
+
                 <div class="container my-4">
-                    <p class="font-weight-bold">Doctor</p>
+
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                        <h3 class="text-warning mb-0">Doctor</h3>
+                        <p class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="">
+
+
+                            ${userName} 
+                        </p>
+                    </div>
                     <div class="row">
                         <!-- Grid column -->
                         <div class="col-xl-12 mb-4 mb-xl-0">
                             <!-- Section: Live preview -->
-                            
 
 
-<p>Hello ${userName}</p>
 
-<c:url value="/j_spring_security_logout" var="logoutUrl" />
-<a href="${logoutUrl}">Log Out</a>
+
+
+
                             <section>
                                 <ul class="nav nav-pills" id="myTab" role="tablist">
                                     <li class="nav-item waves-effect waves-light">

@@ -88,7 +88,7 @@ public class IndexController {
 
     }
 
-    @RequestMapping("doctor/dashboard")
+    @RequestMapping("/doctor/dashboard")
     public ModelAndView doctorDashboard() {
         return new ModelAndView("doctor/doctordashboard");
 

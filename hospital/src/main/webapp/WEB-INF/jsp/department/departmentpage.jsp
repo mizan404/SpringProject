@@ -1,4 +1,5 @@
 <jsp:include page="/WEB-INF/jsp/common/home/header.jsp" />
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div id="wrapper">
     <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bgm" >
         <div class="container-fluid d-flex flex-column p-0">
@@ -11,7 +12,7 @@
                 class="nav navbar-nav text-light" id="accordionSidebar">
                 <li class="nav-item" role="presentation"><a class="nav-link active" href="dashboard"><i class="fas fa-tachometer-alt" style="color: rgba(197,1,1,0.74);"></i><span style="color: rgb(0,21,211);">Dashboard</span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="doctorpage"><i class="fas fa-clinic-medical" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Doctor</strong><br></span></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="staffpage"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Staff</strong><br></span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/staffpage"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Staff</strong><br></span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="departmentpage"><i class="far fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Department</strong><br></span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="laboratorypage"><i class="fas fa-hospital-symbol" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Laboratory</strong><br></span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="medicinepage"><i class="fas fa-capsules" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Medicine</strong><br></span></a></li>
@@ -41,7 +42,14 @@
             </nav>
             <div class="container-fluid">
                 <div class="container my-4">
-                    <p class="font-weight-bold">Department</p>
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                        <h3 class="text-warning mb-0">Department</h3>
+                        <p class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="">
+
+
+                            ${userName} 
+                        </p>
+                    </div>
                     <div class="row">
                         <!-- Grid column -->
                         <div class="col-xl-12 mb-4 mb-xl-0">

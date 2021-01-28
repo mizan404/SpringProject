@@ -1,4 +1,5 @@
 <jsp:include page="/WEB-INF/jsp/common/home/header.jsp" />
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div id="wrapper">
     <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bgm" >
         <div class="container-fluid d-flex flex-column p-0">
@@ -41,7 +42,16 @@
             </nav>
             <div class="container-fluid">
                 <div class="container my-4">
-                    <p class="font-weight-bold">Staff</p>
+
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                        <h3 class="text-warning mb-0">Staff</h3>
+                        <p class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="">
+
+
+                            ${userName} 
+                        </p>
+                    </div>
+
                     <div class="row">
                         <!-- Grid column -->
                         <div class="col-xl-12 mb-4 mb-xl-0">
