@@ -58,6 +58,7 @@
                 <value>com.spring.maven.model.HospitalAppointment</value>
                 <value>com.spring.maven.model.Prescription</value>
                 <value>com.spring.maven.model.Report</value>
+                <value>com.spring.maven.model.ApproveList</value>
                 
             </list>
         </property>

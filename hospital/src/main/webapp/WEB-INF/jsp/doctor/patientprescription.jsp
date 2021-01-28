@@ -44,13 +44,13 @@
                             <div class="form-row">
                                 <div class="col-md-4">
                                     Doctor ID: 
-                                    <input class="form-control" type="text" id="id" />
+                                    <input class="form-control" type="text" id="id" required=""/>
                                 </div>
                                 <div class="col-md-1">
                                     <button class="btn btn-primary border rounded-0" type="button" id="SearchDoctor" ><strong>Select Doctor</strong></button>
                                 </div>
                                 <div class="col-md-4">
-                                    Doctor Name: <input class="form-control" type="text"  name="doctor_name" id="doctor_name"/>
+                                    Doctor Name: <input class="form-control" type="text"  name="doctor_name" id="doctor_name" required=""/>
 
                                 </div>
                             </div>
@@ -70,15 +70,15 @@
                                     <div class="col"><label>Address</label>
                                         <input class="form-control" type="text" name="patient_address" value="${map.hospitalAppointment.patient_address}"/></div>
                                     <div class="col"><label>Temperature</label>
-                                        <input class="form-control" type="text" name="temperature" /></div>
+                                        <input class="form-control" type="text" name="temperature" required=""/></div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col"><label>Weight</label>
-                                        <input class="form-control" type="text" name="weight"/></div>
+                                        <input class="form-control" type="text" name="weight" required="" required="" /></div>
                                     <div class="col"><label>Blood Pressure</label>
-                                        <input class="form-control" type="text" name="blood_pressure"/></div>
+                                        <input class="form-control" type="text" name="blood_pressure" required="" /></div>
                                     <div class="col"><label>Date</label>
-                                        <input class="form-control" type="date" name="date"/></div>
+                                        <input class="form-control" type="date" name="date" required=""/></div>
                                 </div>
 
                             </fieldset>
@@ -767,8 +767,10 @@
                     patient_nid: $("#patient_nid").val()
                 },
         function (data, status) {
+            console.log(data);
 
             for (i = 0; i < data.length; i++) {
+                console.log(data[i].patient_name);
                 var html = '<tr>';
 
                 html += '<td>' + data[i].date + '</td>';

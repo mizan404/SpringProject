@@ -26,8 +26,13 @@ public class Report {
     private String weight;
     private String blood_pressure;
     private String date;
-    
-    
+
+    // For Doctor Details
+    private int doctor_nid;
+    private String doctor_name;
+    private String doctor_degree;
+    private String doctor_designation;
+    private String hospital_name;
 
     // For Symptoms Table
     private String symptom1;
@@ -156,6 +161,46 @@ public class Report {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public int getDoctor_nid() {
+        return doctor_nid;
+    }
+
+    public void setDoctor_nid(int doctor_nid) {
+        this.doctor_nid = doctor_nid;
+    }
+
+    public String getDoctor_name() {
+        return doctor_name;
+    }
+
+    public void setDoctor_name(String doctor_name) {
+        this.doctor_name = doctor_name;
+    }
+
+    public String getDoctor_degree() {
+        return doctor_degree;
+    }
+
+    public void setDoctor_degree(String doctor_degree) {
+        this.doctor_degree = doctor_degree;
+    }
+
+    public String getDoctor_designation() {
+        return doctor_designation;
+    }
+
+    public void setDoctor_designation(String doctor_designation) {
+        this.doctor_designation = doctor_designation;
+    }
+
+    public String getHospital_name() {
+        return hospital_name;
+    }
+
+    public void setHospital_name(String hospital_name) {
+        this.hospital_name = hospital_name;
     }
 
     public String getSymptom1() {

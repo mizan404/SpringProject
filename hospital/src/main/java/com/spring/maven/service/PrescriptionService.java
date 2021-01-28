@@ -93,7 +93,7 @@ public class PrescriptionService implements IPrescriptionService {
         prescription.setWeight(weight);
         prescription.setBlood_pressure(blood_pressure);
         prescription.setDate(date);
-        
+
         prescription.setDoctor_nid(doctor_nid);
         prescription.setDoctor_name(doctor_name);
         prescription.setDoctor_degree(doctor_degree);

@@ -12,7 +12,9 @@
                 class="nav navbar-nav text-light" id="accordionSidebar">
                 <li class="nav-item" role="presentation"><a class="nav-link active" href="/staff/dashboard"><i class="fas fa-tachometer-alt" style="color: rgba(197,1,1,0.74);"></i><span style="color: rgb(0,21,211);">Dashboard</span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/staff/appointmentform"><i class="fas fa-clinic-medical" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Appointment Form</strong><br></span></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="/onlineappointment/list"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Online Appointment List</strong><br></span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/onlineappointment/list"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Online Appointment List  </strong><br></span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/approvedlist"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong> Approved Appointment List</strong><br></span></a></li>
+
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/inviocelist"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Invoice List</strong><br></span></a></li>
             </ul>
             <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
@@ -58,7 +60,7 @@
 
                                             <!--<th id="trs-hd" class="col-lg-2" style="width: 558px;">Approve</th>-->
                                             <th id="trs-hd" class="col-lg-2" style="width: 558px;">Action</th>
-                                            <th id="trs-hd" class="col-lg-2" style="width: 558px;">Action</th>
+                                            <th id="trs-hd" class="col-lg-2" style="width: 558px;">Action</th> 
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -75,13 +77,20 @@
 
 
 
-                                                <td>
-                                                    <button class="btn btn-warning" onclick="viewData('${onlineAppointment.id}','${onlineAppointment.patient_nid}','${onlineAppointment.patient_problem}','${onlineAppointment.contact_number}')" data-toggle="modal" data-target="#exampleModal">Approved</button>
+                                                <td class="text-center">
+                                                    <button class="btn btn-warning" onclick="viewData('${onlineAppointment.patient_nid}', '${onlineAppointment.patient_problem}', '${onlineAppointment.contact_number}', '${onlineAppointment.appointmentDate}')" data-toggle="modal" data-target="#exampleModal">Approve</button>
 
 
                                                 </td>
-                                                <td><a href="/onlineappointment/appointmentform/${onlineAppointment.id}" ><button class="btn btn-info mb-1"><i class="fa fa-edit" aria-hidden="true"></i></button></a>  
-                                                    <a href="/adminDelete/${onlineAppointment.id}" ><button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></a>
+                                                <td class="text-center">
+<!--                                                    <a href="/onlineappointment/appointmentform/${onlineAppointment.id}" >
+                                                        <button class="btn btn-info mb-1"><i class="fa fa-edit" aria-hidden="true"></i>
+                                                        </button>
+                                                    </a>  -->
+                                                    <a href="/adminDelete/${onlineAppointment.id}" >
+                                                        <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </button>
+                                                    </a>
 
                                                     <!--                                                <button class="btn btn-success" style="margin-left: 5px;width: 36px;" type="submit"><i class="fa fa-check" style="font-size: 15px;"></i></button>
                                                                                                     <button class="btn btn-danger" style="margin-left: 5px;width: 36px;" type="submit"><i class="fa fa-trash" style="font-size: 15px;"></i></button>-->
@@ -95,7 +104,7 @@
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">Online Appointment Request</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -105,30 +114,56 @@
 
 
 
-                                                <form action="" method="POST">
+                                                <form action="/approveSave" method="POST">
                                                     <div class="form-group">
                                                         <div class="input-group">
-                                                            <input class="form-control" type="text" id="patient_nid" name="patient_nid">
+                                                            <div class="input-group-prepend">
+                                                                <span class="text-primary input-group-text">Patient NID</span>
+                                                            </div><input class="form-control" type="text" required="" id="patient_nid" name="patient_nid"/>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="text-primary input-group-text">Problem</span>
+                                                            </div><input class="form-control" type="text" required="" id="patient_problem" name="patient_problem"/>
 
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="input-group">
                                                             <div class="input-group-prepend">
-                                                                <span class="text-primary input-group-text"><i class="fa fa-lock"></i></span>
-                                                            </div><input class="form-control" type="text" required="" id="patient_problem">
-                                                            <div class="input-group-append">
+                                                                <span class="text-primary input-group-text">Contact Number</span>
+                                                            </div><input class="form-control" type="text" required="" id="contact_number" name="contact_number"/>
 
-                                                            </div>
                                                         </div>
                                                     </div>
-
                                                     <div class="form-group">
-                                                        <label for="message-text" class="col-form-label">Message:</label>
-                                                        <textarea class="form-control" id="message-text"></textarea>
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="text-primary input-group-text">Appointment Date</span>
+                                                            </div><input class="form-control" type="text" required="" id="appointmentDate" name="appointmentDate"/>
+
+                                                        </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <button class="btn btn-primary btn-lg text-white" style="width: 100%;" type="button">Log in</button>
+                                                        <label for="message-text" class="col-form-label">Message:</label>
+                                                        <textarea class="form-control" id="message-text" placeholder="Your online appointment is approved."></textarea>
+                                                    </div>
+                                                    <!--                                                    <div class="form-group">
+                                                                                                            <div class="input-group">
+                                                    
+                                                                                                                <p>Your online appointment is approved.</p>
+                                                    
+                                                                                                            </div>
+                                                                                                        </div>-->
+
+
+
+                                                    <div class="form-group">
+                                                        <button class="btn btn-primary btn-lg text-white" style="width: 100%;" type="submit">Send SMS</button>
                                                     </div>
                                                 </form>
 
@@ -138,10 +173,10 @@
 
 
                                             </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
-                                            </div>
+                                            <!--                                            <div class="modal-footer">
+                                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                                                        </div>-->
                                         </div>
                                     </div>
                                 </div>
@@ -170,12 +205,14 @@
 
 
 <script>
-    
-    function viewData(a,b,c,d){
-        $("#patient_nid").val(b);
-        $("#patient_problem").val(c);
+
+    function viewData(a, b, c, d) {
+        $("#patient_nid").val(a);
+        $("#patient_problem").val(b);
+        $("#contact_number").val(c);
+        $("#appointmentDate").val(d);
     }
-    
+
 </script>
 
 <jsp:include page="/WEB-INF/jsp/common/home/footer.jsp" />

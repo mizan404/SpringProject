@@ -9,12 +9,12 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.spring.maven.model.Doctor;
 import com.spring.maven.model.HospitalAppointment;
-import com.spring.maven.model.OnlineAppointment;
 import com.spring.maven.model.Prescription;
 import com.spring.maven.service.impl.IDoctorService;
 import com.spring.maven.service.impl.IHospitalAppointmentService;
 import com.spring.maven.service.impl.IOnlineAppointmentService;
 import com.spring.maven.service.impl.IPrescriptionService;
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -50,7 +50,7 @@ public class IndexController {
         return new ModelAndView("index");
     }
 
-    @RequestMapping("/login")
+    @RequestMapping("/commonlogin")
     public ModelAndView login() {
         return new ModelAndView("commonlogin/commonlogin");
     }
@@ -79,6 +79,12 @@ public class IndexController {
     @RequestMapping("/staff/dashboard")
     public ModelAndView staffHomePage() {
         return new ModelAndView("staff/homestaffpage");
+
+    }
+
+    @RequestMapping("/staff/approvelist")
+    public ModelAndView approveList() {
+        return new ModelAndView("staff/approvedlist");
 
     }
 

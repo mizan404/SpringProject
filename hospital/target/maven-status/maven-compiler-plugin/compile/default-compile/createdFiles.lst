@@ -4,11 +4,13 @@ com\spring\maven\controller\PrescriptionController.class
 com\spring\maven\service\DepartmentService.class
 com\spring\maven\model\Report.class
 com\spring\maven\service\ReportService.class
+com\spring\maven\service\impl\IApproveListService.class
 com\spring\maven\service\StaffService.class
 com\spring\maven\dao\impl\IReportDAO.class
 com\spring\maven\dao\LaboratoryDAO.class
 com\spring\maven\common\ICommonService.class
 com\spring\maven\controller\impl\IReportController.class
+com\spring\maven\controller\impl\IApproveListController.class
 com\spring\maven\controller\impl\IMedicineController.class
 com\spring\maven\controller\StaffController.class
 com\spring\maven\model\Staff.class
@@ -17,11 +19,13 @@ com\spring\maven\controller\LaboratoryController.class
 com\spring\maven\dao\DepartmentDAO.class
 com\spring\maven\service\impl\ILaboratoryService.class
 com\spring\maven\model\Medicine.class
+com\spring\maven\service\ApproveListService.class
 com\spring\maven\service\impl\IAdminService.class
 com\spring\maven\service\MedicineService.class
 com\spring\maven\model\Employee.class
 com\spring\maven\dao\DoctorDAO.class
 com\spring\maven\controller\impl\IDoctorController.class
+com\spring\maven\dao\ApproveListDAO.class
 com\spring\maven\service\impl\IStaffService.class
 com\spring\maven\controller\EmployeeController.class
 com\spring\maven\controller\impl\IStaffController.class
@@ -34,6 +38,7 @@ com\spring\maven\dao\AdminDAO.class
 com\spring\maven\controller\impl\IOnlineAppointmentController.class
 com\spring\maven\dao\impl\IPrescriptionDAO.class
 com\spring\maven\service\HospitalAppointmentService.class
+com\spring\maven\dao\impl\IApproveListDAO.class
 com\spring\maven\service\LaboratoryService.class
 com\spring\maven\service\OnlineAppointmentService.class
 com\spring\maven\controller\ReportController.class
@@ -52,6 +57,8 @@ com\spring\maven\controller\impl\IEmployeeController.class
 com\spring\maven\common\ICommonDAO.class
 com\spring\maven\service\impl\IDoctorService.class
 com\spring\maven\dao\impl\ILaboratoryDAO.class
+com\spring\maven\controller\LoginController.class
+com\spring\maven\model\ApproveList.class
 com\spring\maven\controller\DashBoardController.class
 com\spring\maven\service\impl\IEmployeeService.class
 com\spring\maven\dao\impl\IEmployeeDAO.class
@@ -73,6 +80,7 @@ com\spring\maven\controller\MedicineController.class
 com\spring\maven\model\Prescription.class
 com\spring\maven\service\PrescriptionService.class
 com\spring\maven\dao\EmployeeDAO.class
+com\spring\maven\controller\ApproveListController.class
 com\spring\maven\model\Department.class
 com\spring\maven\dao\impl\IMedicineDAO.class
 com\spring\maven\controller\DepartmentController.class

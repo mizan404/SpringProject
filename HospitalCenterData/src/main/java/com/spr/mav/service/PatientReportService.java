@@ -35,6 +35,12 @@ public class PatientReportService implements IPatientReportService {
         String blood_pressure = request.getParameter("blood_pressure");
         String date = request.getParameter("date");
 
+        int doctor_nid = Integer.parseInt(request.getParameter("doctor_nid"));
+        String doctor_name = request.getParameter("doctor_name");
+        String doctor_degree = request.getParameter("doctor_degree");
+        String doctor_designation = request.getParameter("doctor_designation");
+        String hospital_name = request.getParameter("hospital_name");
+
         String symptom1 = request.getParameter("symptom1");
         String symptom2 = request.getParameter("symptom2");
         String symptom3 = request.getParameter("symptom3");
@@ -87,6 +93,12 @@ public class PatientReportService implements IPatientReportService {
         report.setWeight(weight);
         report.setBlood_pressure(blood_pressure);
         report.setDate(date);
+
+        report.setDoctor_nid(doctor_nid);
+        report.setDoctor_name(doctor_name);
+        report.setDoctor_degree(doctor_degree);
+        report.setDoctor_designation(doctor_designation);
+        report.setHospital_name(hospital_name);
 
         report.setSymptom1(symptom1);
         report.setSymptom2(symptom2);

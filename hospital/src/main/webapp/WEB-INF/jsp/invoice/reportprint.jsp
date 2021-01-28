@@ -16,7 +16,7 @@
                                 <li class="nav-item" role="presentation"><a class="nav-link" href="/onlineappointment/list"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Online Appointment List</strong><br></span></a></li>
                                 <li class="nav-item" role="presentation"><a class="nav-link" href="/inviocelist"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Invoice List</strong><br></span></a></li>
                             </ul> -->
-                <li class="nav-item" role="presentation"><a class="nav-link" href="/doctor/dashboard"><i class="fas fa-clinic-medical" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Waiting List</strong><br></span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/staff/dashboard"><i class="fas fa-clinic-medical" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Dashboard</strong><br></span></a></li>
 
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
         </div>
@@ -245,7 +245,10 @@
                     </div>
                     <div class="row" style="margin-right: 0px;margin-left: 0px;margin-top: 10px;">
                         <div class="col" style="margin-bottom: 20px;">
-                            <p>Prepared By:&nbsp;</p>
+                            <input  class="form-control-plaintext" type="text"  name="doctor_name" id="doctor_name"/>
+                            <input  class="form-control-plaintext" type="text"  name="doctor_degree" id="doctor_degree"/>
+                            <input  class="form-control-plaintext" type="text"  name="doctor_designation" id="doctor_designation"/>
+                            <input  class="form-control-plaintext" type="text"  name="hospital_name" id="hospital_name"/>
                         </div>
                         <div class="col-3 text-center" style="margin-bottom: 20px;padding: 0px;">
                             <p></p><button class="btn btn-primary text-center" type="button" onclick="myFunction1()" style="padding: 10px;">Print</button>
@@ -357,11 +360,11 @@
                     weight: $("#weight").val(),
                     blood_pressure: $("#blood_pressure").val(),
                     date: $("#date").val(),
-//                    doctor_nid: $("#doctor_nid").val(),
-//                    doctor_name: $("#doctor_nid").val(),
-//                    doctor_nid: $("#doctor_nid").val(),
-//                    doctor_nid: $("#doctor_nid").val(),
-//                    doctor_nid: $("#doctor_nid").val(),
+                    doctor_nid: $("#doctor_nid").val(),
+                    doctor_name: $("#doctor_name").val(),
+                    doctor_degree: $("#doctor_degree").val(),
+                    doctor_designation: $("#doctor_designation").val(),
+                    hospital_name: $("#hospital_name").val(),
                     symptom1: $("#symptom1").val(),
                     symptom2: $("#symptom2").val(),
                     symptom3: $("#symptom3").val(),

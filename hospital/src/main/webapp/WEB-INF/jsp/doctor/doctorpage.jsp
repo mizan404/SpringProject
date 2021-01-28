@@ -1,4 +1,6 @@
 <jsp:include page="/WEB-INF/jsp/common/home/header.jsp" />
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
+
 <div id="wrapper">
     <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bgm" >
         <div class="container-fluid d-flex flex-column p-0">
@@ -27,7 +29,7 @@
 
                     <nav class="navbar navbar-light  ">
                         <div class="container">
-                            <p style="color: rgb(66,87,241);font-size: 20px; float: left"><strong>Hospital Management And Information System </strong></p>
+                            <p style="color: rgb(66,87,241);font-size: 20px; float: left"><strong> ${username}</strong></p>
                             <ul class="nav navbar-nav flex-nowrap ml-auto">
 
                             </ul>
@@ -35,7 +37,9 @@
                     </nav>
                     <ul class="nav navbar-nav flex-nowrap ml-auto">
                         <div class="d-none d-sm-block topbar-divider"></div>
-                        <li class="nav-item dropdown no-arrow" role="presentation"><a class="nav-link" href="#"><button class="btn btn-primary" type="button">Logout</button></a></li>
+                        <li class="nav-item dropdown no-arrow" role="presentation"><c:url value="/j_spring_security_logout" var="logoutUrl" />
+                            <a href="${logoutUrl}">Log Out</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -46,6 +50,13 @@
                         <!-- Grid column -->
                         <div class="col-xl-12 mb-4 mb-xl-0">
                             <!-- Section: Live preview -->
+                            
+
+
+<p>Hello ${userName}</p>
+
+<c:url value="/j_spring_security_logout" var="logoutUrl" />
+<a href="${logoutUrl}">Log Out</a>
                             <section>
                                 <ul class="nav nav-pills" id="myTab" role="tablist">
                                     <li class="nav-item waves-effect waves-light">
