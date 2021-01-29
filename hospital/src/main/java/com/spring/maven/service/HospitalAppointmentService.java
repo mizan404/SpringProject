@@ -69,4 +69,9 @@ public class HospitalAppointmentService implements IHospitalAppointmentService {
         return hospitalAppointmentDAO.getByNid(patient_nid);
     }
 
+    @Override
+    public List<HospitalAppointment> getPatientByDepartment(int patient_nid) {
+        return hospitalAppointmentDAO.getPatientByDepartment(patient_nid);
+    }
+
 }

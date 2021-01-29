@@ -768,7 +768,8 @@
                 },
         function (data, status) {
             console.log(data);
-
+ console.log(data[0].patient_name);
+ console.log(data[1].patient_name);
             for (i = 0; i < data.length; i++) {
                 console.log(data[i].patient_name);
                 var html = '<tr>';

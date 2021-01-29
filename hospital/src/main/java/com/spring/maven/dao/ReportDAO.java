@@ -43,7 +43,9 @@ public class ReportDAO implements IReportDAO {
 
     @Override
     public List<Report> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Report> reports = sessionFactory.getCurrentSession().createCriteria(Report.class).list();
+        sessionFactory.getCurrentSession().flush();
+        return reports;
     }
 
     @Override

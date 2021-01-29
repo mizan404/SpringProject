@@ -8,6 +8,7 @@ package com.spring.maven.dao;
 import com.spring.maven.dao.impl.IHospitalAppointmentDAO;
 import com.spring.maven.model.HospitalAppointment;
 import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -63,6 +64,16 @@ public class HospitalAppointmentDAO implements IHospitalAppointmentDAO {
         HospitalAppointment appointment = (HospitalAppointment) sessionFactory.getCurrentSession().get(HospitalAppointment.class, patient_nid);
         sessionFactory.getCurrentSession().flush();
         return appointment;
+    }
+
+    @Override
+    public List<HospitalAppointment> getPatientByDepartment(int patient_nid) {
+        String hqlQuery = "from HospitalAppointment where patient_nid=:patient_nid";
+        Query query = sessionFactory.getCurrentSession().createQuery(hqlQuery);
+        query.setParameter("patient_nid", patient_nid);
+        List<HospitalAppointment> hospitalAppointments = query.list();
+        sessionFactory.getCurrentSession().flush();
+        return hospitalAppointments;
     }
 
 }

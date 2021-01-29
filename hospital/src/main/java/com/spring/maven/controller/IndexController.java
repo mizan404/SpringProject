@@ -9,11 +9,14 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.spring.maven.model.Doctor;
 import com.spring.maven.model.HospitalAppointment;
+import com.spring.maven.model.OnlineAppointment;
 import com.spring.maven.model.Prescription;
+import com.spring.maven.service.impl.IApproveListService;
 import com.spring.maven.service.impl.IDoctorService;
 import com.spring.maven.service.impl.IHospitalAppointmentService;
 import com.spring.maven.service.impl.IOnlineAppointmentService;
 import com.spring.maven.service.impl.IPrescriptionService;
+import com.spring.maven.service.impl.IReportService;
 import java.security.Principal;
 import java.util.HashMap;
 import java.util.List;
@@ -23,6 +26,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -44,6 +48,17 @@ public class IndexController {
 
     @Autowired
     IDoctorService doctorService;
+
+    @Autowired
+    IApproveListService approveListService;
+
+    @Autowired
+    IPrescriptionService prescriptionService1;
+    @Autowired
+    IOnlineAppointmentService onlineAppointmentService1;
+
+    @Autowired
+    IReportService reportService;
 
     @RequestMapping("/")
     public ModelAndView index() {
@@ -190,5 +205,29 @@ public class IndexController {
         Gson g = gson.create();
         Doctor doctor = doctorService.getById(id);
         return g.toJson(doctor);
+    }
+
+//    // For search Patient by department  
+//    @RequestMapping(value = "/patientbydeparmentreport")
+//    public ModelAndView leaveHistoryData(@RequestParam("patient_problem") String patient_problem) {
+//        List<HospitalAppointment> patientBydepartment = hospitalAppointmentService.getPatientByDepartment(patient_problem);
+//        Map< String, Object> map = new HashMap<String, Object>();
+//        map.put("patientBydepartment", patientBydepartment);
+//
+//        return new ModelAndView("/report/patientByDepartment", "map", map);
+//    }
+    //for search and report
+    @RequestMapping(value = "/-------")
+    public ModelAndView patientByDepartment() {
+        List<OnlineAppointment> appointments = onlineAppointmentService.getAll();
+        Map< String, Object> map = new HashMap<String, Object>();
+        map.put("appointments", appointments);
+//        System.out.println("---------------------------------------------------------------------" + patient_nid);
+        return new ModelAndView("/report/onlinepatient", "map", map);
+
+//        List<OnlineAppointment> onlineAppointments = onlineAppointmentService.getAll();
+//        Map<String, Object> map = new HashMap<String, Object>();
+//        map.put("onlineAppointments", onlineAppointments);
+//        return new ModelAndView("staff/onlineAppointmentForm", "map", map);
     }
 }

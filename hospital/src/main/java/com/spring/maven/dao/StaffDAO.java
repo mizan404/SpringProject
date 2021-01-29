@@ -44,7 +44,9 @@ public class StaffDAO implements IStaffDAO {
 
     @Override
     public List<Staff> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Staff> staffs = sessionFactory.getCurrentSession().createCriteria(Staff.class).list();
+        sessionFactory.getCurrentSession().flush();
+        return staffs;
     }
 
     @Override

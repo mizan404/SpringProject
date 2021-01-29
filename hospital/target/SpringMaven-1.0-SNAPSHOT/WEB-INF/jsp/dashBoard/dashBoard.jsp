@@ -26,6 +26,7 @@
                         <li class="nav-item" role="presentation"><a class="nav-link" href="departmentpage"><i class="far fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Department</strong><br></span></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="laboratorypage"><i class="fas fa-hospital-symbol" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Laboratory</strong><br></span></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="medicinepage"><i class="fas fa-capsules" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Medicine</strong><br></span></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="allreport"><i class="fas fa-capsules" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Report</strong><br></span></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="adminpage"><i class="fas fa-calendar-minus" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Admin</strong><br></span></a></li>
                     </ul>
                     <div class="text-center"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button" style="color: rgb(255,255,255);background-color: rgba(54,40,203,0.69);"></button></div>
@@ -49,12 +50,12 @@
                             </ul>
                         </div>
                     </nav>
-                                
-                                
+
+
                     <div class="container-fluid">
-                        
-                        
-                        
+
+
+
                         <div class="d-sm-flex justify-content-between align-items-center mb-4">
                             <h3 class="text-warning mb-0">Dashboard</h3>
                             <p class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="">
@@ -63,11 +64,11 @@
                                 ${userName} 
                             </p>
                         </div>
-                            
-                            
-                            
-                            
-                            
+
+
+
+
+
                         <div class="row">
                             <div class="col-md-6 col-xl-3 mb-4">
                                 <div class="card shadow border-left-primary py-2">

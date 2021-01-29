@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -79,5 +80,19 @@ public class HospitalAppointmentController implements IHospitalAppointmentContro
 
         return new ModelAndView("doctor/physicalappointment", "map", map);
     }
+// For search Patient by department  
 
+    @RequestMapping(value = "/pd")
+    public ModelAndView patientByDepartment() {
+        List<HospitalAppointment> patientBydepartment = hospitalAppointmentService.getAll();
+        Map< String, Object> map = new HashMap<String, Object>();
+        map.put("patientBydepartment", patientBydepartment);
+//        System.out.println("---------------------------------------------------------------------" + patient_nid);
+        return new ModelAndView("/report/patientByDepartment", "map", map);
+
+//        List<OnlineAppointment> onlineAppointments = onlineAppointmentService.getAll();
+//        Map<String, Object> map = new HashMap<String, Object>();
+//        map.put("onlineAppointments", onlineAppointments);
+//        return new ModelAndView("staff/onlineAppointmentForm", "map", map);
+    }
 }

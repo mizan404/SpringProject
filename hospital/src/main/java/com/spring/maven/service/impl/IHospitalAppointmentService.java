@@ -7,6 +7,7 @@ package com.spring.maven.service.impl;
 
 import com.spring.maven.common.ICommonService;
 import com.spring.maven.model.HospitalAppointment;
+import java.util.List;
 
 /**
  *
@@ -15,4 +16,6 @@ import com.spring.maven.model.HospitalAppointment;
 public interface IHospitalAppointmentService extends ICommonService<HospitalAppointment> {
 
     public HospitalAppointment getByNid(int patient_nid);
+
+    public List<HospitalAppointment> getPatientByDepartment(int patient_nid);
 }

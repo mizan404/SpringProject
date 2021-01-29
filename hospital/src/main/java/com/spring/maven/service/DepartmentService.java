@@ -44,7 +44,7 @@ public class DepartmentService implements IDepartmentService {
 
     @Override
     public List<Department> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return departmentDAO.getAll();
     }
 
     @Override

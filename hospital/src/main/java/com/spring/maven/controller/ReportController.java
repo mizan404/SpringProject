@@ -10,13 +10,16 @@ import com.google.gson.GsonBuilder;
 import com.spring.maven.controller.impl.IReportController;
 import com.spring.maven.model.Report;
 import com.spring.maven.service.impl.IReportService;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -68,7 +71,7 @@ public class ReportController implements IReportController {
         GsonBuilder gson = new GsonBuilder();
         Gson g = gson.create();
         Report report = reportService.getByNid(patient_nid);
-        return g.toJson( report);
+        return g.toJson(report);
     }
 
     @RequestMapping(value = "getReportById/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -79,4 +82,16 @@ public class ReportController implements IReportController {
         return g.toJson(report);
     }
 
+    // for report
+    // Report for Doctor Nid
+//    @RequestMapping(value = "/showGroupSalaryData")
+//    public ModelAndView leaveHistoryData(@RequestParam("empDep") String empDep) {
+//        List<Report> reports = reportService.g(empDep);
+//
+//        Map<String, Object> map = new HashMap<String, Object>();
+//        map.put("gSalaryData", gSalaryData);
+//
+//        return new ModelAndView("/admin/salaryDataInsertByGroup", "map", map);
+//
+//    }
 }

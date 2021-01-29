@@ -7,6 +7,7 @@ package com.spring.maven.dao.impl;
 
 import com.spring.maven.common.ICommonDAO;
 import com.spring.maven.model.HospitalAppointment;
+import java.util.List;
 
 /**
  *
@@ -15,4 +16,6 @@ import com.spring.maven.model.HospitalAppointment;
 public interface IHospitalAppointmentDAO extends ICommonDAO<HospitalAppointment> {
 
     public HospitalAppointment getByNid(int patient_nid);
+
+    public List<HospitalAppointment> getPatientByDepartment(int patient_nid);
 }
