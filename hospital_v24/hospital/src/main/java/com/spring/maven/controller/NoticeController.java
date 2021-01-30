@@ -33,7 +33,7 @@ public class NoticeController implements INoticeController {
     @Override
     @RequestMapping(value = "/saveNotice")
     public ModelAndView save(HttpServletRequest request) {
-        System.out.println("---------------------------------------------------------" + request.getParameter("date"));
+
         noticeService.save(request);
         return new ModelAndView("admin/notice");
     }
