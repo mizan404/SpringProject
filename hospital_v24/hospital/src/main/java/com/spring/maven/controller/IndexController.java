@@ -7,13 +7,17 @@ package com.spring.maven.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.spring.maven.model.ApproveList;
 import com.spring.maven.model.Doctor;
 import com.spring.maven.model.HospitalAppointment;
+import com.spring.maven.model.Notice;
 import com.spring.maven.model.OnlineAppointment;
 import com.spring.maven.model.Prescription;
+import com.spring.maven.model.Report;
 import com.spring.maven.service.impl.IApproveListService;
 import com.spring.maven.service.impl.IDoctorService;
 import com.spring.maven.service.impl.IHospitalAppointmentService;
+import com.spring.maven.service.impl.INoticeService;
 import com.spring.maven.service.impl.IOnlineAppointmentService;
 import com.spring.maven.service.impl.IPrescriptionService;
 import com.spring.maven.service.impl.IReportService;
@@ -53,14 +57,13 @@ public class IndexController {
     IApproveListService approveListService;
 
     @Autowired
-    IPrescriptionService prescriptionService1;
-    @Autowired
-    IOnlineAppointmentService onlineAppointmentService1;
-
-    @Autowired
     IReportService reportService;
 
+    @Autowired
+    INoticeService noticeService;
+
     @RequestMapping("/")
+
     public ModelAndView index() {
         return new ModelAndView("index");
     }
@@ -230,4 +233,77 @@ public class IndexController {
 //        map.put("onlineAppointments", onlineAppointments);
 //        return new ModelAndView("staff/onlineAppointmentForm", "map", map);
     }
+
+    @RequestMapping(value = "/onlinepatientreport")
+    public ModelAndView onlinePatient() {
+        List<OnlineAppointment> onlineAppointments = onlineAppointmentService.getAll();
+        Map< String, Object> map = new HashMap<String, Object>();
+        map.put("onlineAppointments", onlineAppointments);
+        return new ModelAndView("/report/onlinepatient", "map", map);
+
+    }
+
+    @RequestMapping(value = "/approvedpatietnreport")
+    public ModelAndView approvedpatietnreport() {
+        List<ApproveList> onlineAppointments = approveListService.getAll();
+        Map< String, Object> map = new HashMap<String, Object>();
+        map.put("onlineAppointments", onlineAppointments);
+        return new ModelAndView("/report/approvedpatietnreport", "map", map);
+
+    }
+
+    @RequestMapping(value = "/patientbydoctor")
+    public ModelAndView patientbydoctor() {
+        List<Prescription> onlineAppointments = prescriptionService.getAll();
+        Map< String, Object> map = new HashMap<String, Object>();
+        map.put("onlineAppointments", onlineAppointments);
+        return new ModelAndView("/report/patientbydoctor", "map", map);
+
+    }
+
+    @RequestMapping(value = "/noticereport")
+    public ModelAndView noticereport() {
+        List<Notice> onlineAppointments = noticeService.getAll();
+        Map< String, Object> map = new HashMap<String, Object>();
+        map.put("onlineAppointments", onlineAppointments);
+        return new ModelAndView("/report/noticereport", "map", map);
+
+    }
+
+    @RequestMapping(value = "/patientsymptoms")
+    public ModelAndView patientsymptoms() {
+        List<Prescription> onlineAppointments = prescriptionService.getAll();
+        Map< String, Object> map = new HashMap<String, Object>();
+        map.put("onlineAppointments", onlineAppointments);
+        return new ModelAndView("/report/patientsymptoms", "map", map);
+
+    }
+
+    @RequestMapping(value = "/patientmedicides")
+    public ModelAndView patientmedicides() {
+        List<Prescription> onlineAppointments = prescriptionService.getAll();
+        Map< String, Object> map = new HashMap<String, Object>();
+        map.put("onlineAppointments", onlineAppointments);
+        return new ModelAndView("/report/patientmedicides", "map", map);
+
+    }
+
+    @RequestMapping(value = "/patienttests")
+    public ModelAndView patienttests() {
+        List<Prescription> onlineAppointments = prescriptionService.getAll();
+        Map< String, Object> map = new HashMap<String, Object>();
+        map.put("onlineAppointments", onlineAppointments);
+        return new ModelAndView("/report/patienttests", "map", map);
+
+    }
+
+    @RequestMapping(value = "/patienttestsreport")
+    public ModelAndView patienttestsreport() {
+        List<Report> onlineAppointments = reportService.getAll();
+        Map< String, Object> map = new HashMap<String, Object>();
+        map.put("onlineAppointments", onlineAppointments);
+        return new ModelAndView("/report/patienttestsreport", "map", map);
+
+    }
+
 }

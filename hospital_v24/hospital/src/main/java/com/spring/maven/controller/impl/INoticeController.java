@@ -7,11 +7,13 @@ package com.spring.maven.controller.impl;
 
 import com.spring.maven.common.ICommonController;
 import com.spring.maven.model.Notice;
+import java.util.List;
 
 /**
  *
  * @author B8
  */
-public interface INoticeController extends ICommonController<Notice>{
-    
+public interface INoticeController extends ICommonController<Notice> {
+
+  
 }

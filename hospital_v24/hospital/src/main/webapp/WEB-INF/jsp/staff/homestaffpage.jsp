@@ -13,6 +13,7 @@
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/onlineappointment/list"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Online Appointment List</strong><br></span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/inviocelist"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Invoice List</strong><br></span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/report"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Report Desk</strong><br></span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/staffnotice"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Notice </strong><br></span></a></li>
 
             </ul>
             <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
@@ -38,12 +39,58 @@
                 </div>
             </nav>
 
-            <h1>Welcome</h1>
+
+            <div class="container-fluid">
+
+
+
+                <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                    <h3 class="text-warning mb-0">Welcome To Staff Page</h3>
+                    <!--                    <p class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="">
+                    
+                    
+               
+</p>-->
+                    <p> <a href="/stafflogin">Log out </a></p>
+                </div>
+
+                <!--                <div class = "container" >
+                
+                
+                                    <hr/>
+                
+                
+                                    <section>
+                                        <section id="gallery">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <c:forEach items="${map.notice}" var="n">
+                                                        <div class="card w-75" style="margin-top: 5px">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">${n.notice_title}</h5>
+                                                                <p class="card-text">${n.notice_discription}</p>
+                                                                <p class="card-text">${n.notice_number}</p>
+                                                                <p class="card-text">${n.date}</p>
+                                                                <a href="" class="btn btn-primary">Button</a>
+                                                            </div>
+                                                        </div>
+                                                    </c:forEach>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </section>
+                
+                                </div>-->
+
+
+
+
+            </div>
 
         </div>
 
 
-        >
+
 
     </div>
 

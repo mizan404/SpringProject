@@ -65,11 +65,17 @@ public class DashBoardController {
         return new ModelAndView("/report/report", "userName", loggedInUserName);
     }
 
-    @RequestMapping("/doctor-report")
-    public ModelAndView fordoctornid(Principal principal) {
+    @RequestMapping("/notice")
+    public ModelAndView noticePage(Principal principal) {
         String loggedInUserName = principal.getName();
-        return new ModelAndView("/report/departmentreport", "userName", loggedInUserName);
+        return new ModelAndView("/admin/notice", "userName", loggedInUserName);
     }
+
+//    @RequestMapping("/doctor-report")
+//    public ModelAndView fordoctornid(Principal principal) {
+//        String loggedInUserName = principal.getName();
+//        return new ModelAndView("/report/departmentreport", "userName", loggedInUserName);
+//    }
 
 //    @RequestMapping("/patientbydeparmentreport")
 //    public ModelAndView deparmentreport(Principal principal) {

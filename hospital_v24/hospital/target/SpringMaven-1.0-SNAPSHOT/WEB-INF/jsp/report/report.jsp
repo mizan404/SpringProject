@@ -14,13 +14,20 @@
             <ul
                 class="nav navbar-nav text-light" id="accordionSidebar">
                 <li class="nav-item" role="presentation"><a class="nav-link active" href="dashboard"><i class="fas fa-tachometer-alt" style="color: rgba(197,1,1,0.74);"></i><span style="color: rgb(0,21,211);">Dashboard</span></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="doctor-report"><i class="fas fa-clinic-medical" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Doctor</strong><br></span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/onlinepatientreport"><i class="fas fa-clinic-medical" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Online Patient Report</strong><br></span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/physicalappointment/pd"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Department Report</strong><br></span></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="departmentpage"><i class="far fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Department</strong><br></span></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="laboratorypage"><i class="fas fa-hospital-symbol" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Laboratory</strong><br></span></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="medicinepage"><i class="fas fa-capsules" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Medicine</strong><br></span></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="allreport"><i class="fas fa-capsules" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Report</strong><br></span></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="adminpage"><i class="fas fa-calendar-minus" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Admin</strong><br></span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/approvedpatietnreport"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Online Approved Report</strong><br></span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/patientbydoctor"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Patient By Doctor Report</strong><br></span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/noticereport"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>All Notice Report</strong><br></span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/patientsymptoms"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Patient Symptoms Report</strong><br></span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/patientmedicides"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Patient Medicines Report</strong><br></span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/patienttests"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Patient Tests Report</strong><br></span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/patienttestsreport"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Patient Tests Result Report</strong><br></span></a></li>
+                <!--                <li class="nav-item" role="presentation"><a class="nav-link" href="departmentpage"><i class="far fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Department</strong><br></span></a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="laboratorypage"><i class="fas fa-hospital-symbol" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Laboratory</strong><br></span></a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="medicinepage"><i class="fas fa-capsules" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Medicine</strong><br></span></a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="allreport"><i class="fas fa-capsules" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Report</strong><br></span></a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="adminpage"><i class="fas fa-calendar-minus" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Admin</strong><br></span></a></li>-->
             </ul>
             <div class="text-center"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button" style="color: rgb(255,255,255);background-color: rgba(54,40,203,0.69);"></button></div>
         </div>
@@ -35,10 +42,7 @@
 
 
                         </li>
-                        <li>
-                        <c:url value="/j_spring_security_logout" var="logoutUrl" />
-                        <a href="${logoutUrl}"><button class="btn btn-primary" type="button">Logout</button></a>
-                        </li>
+
 
                     </ul>
                 </div>
@@ -51,55 +55,56 @@
 
                 <div class="d-sm-flex justify-content-between align-items-center mb-4">
                     <h3 class="text-warning mb-0">Report Page</h3>
-                    <p class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="">
 
 
-                        ${userName} 
-                    </p>
+
+                    <c:url value="/j_spring_security_logout" var="logoutUrl" />
+                    <a href="${logoutUrl}"><button class="btn btn-primary" type="button">Logout</button></a>
+
                 </div>
 
-                <div class = "container-fluid" >
-                    <div class="row-cols-4">
-                        <form action="/showGroupSalaryData" method="post">
-                            <select class="form-control" name="empDep" >
-
-                                <option value="IT">IT</option>
-                                <option value=" Accounts"> Accounts</option>
-                                <option value="Public Relations">Public Relations</option>
-                                <option value="Law">Law</option>
-
-                            </select>
-                            <input type="submit" class="btn btn-primary mt-3" value="Search"/>
-
-                        </form> 
-                    </div>
-
-                    <hr/>
-                    <table class = "table table-striped table-bordered" id="datatable">
-                        <thead>
-                            <tr class = "thead-dark">
-                                <th>Name</th>
-                                <th>Department</th>
-                                <th>Date of birth</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <c:forEach items="${list}" var="employee">
-                            <tr>
-                                <td>${employee.name}</td>
-                                <td>${employee.department}</td>
-                                <td>${employee.dob}</td>
-                                <td> 
-                                    <a href = "${pageContext.request.contextPath}/EmployeeController?action=EDIT&id=${employee.id}">Edit</a> 
-                                    |
-                                    <a href = "${pageContext.request.contextPath}/EmployeeController?action=DELETE&id=${employee.id}">Delete</a> 
-                                </td>
-                            </tr>
-                        </c:forEach>
-                        </tbody>
-                    </table>
-                </div>
+                <!--                <div class = "container-fluid" >
+                                    <div class="row-cols-4">
+                                        <form action="/showGroupSalaryData" method="post">
+                                            <select class="form-control" name="empDep" >
+                
+                                                <option value="IT">IT</option>
+                                                <option value=" Accounts"> Accounts</option>
+                                                <option value="Public Relations">Public Relations</option>
+                                                <option value="Law">Law</option>
+                
+                                            </select>
+                                            <input type="submit" class="btn btn-primary mt-3" value="Search"/>
+                
+                                        </form> 
+                                    </div>
+                
+                                    <hr/>
+                                    <table class = "table table-striped table-bordered" id="datatable">
+                                        <thead>
+                                            <tr class = "thead-dark">
+                                                <th>Name</th>
+                                                <th>Department</th>
+                                                <th>Date of birth</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <c:forEach items="${list}" var="employee">
+                                            <tr>
+                                                <td>${employee.name}</td>
+                                                <td>${employee.department}</td>
+                                                <td>${employee.dob}</td>
+                                                <td> 
+                                                    <a href = "${pageContext.request.contextPath}/EmployeeController?action=EDIT&id=${employee.id}">Edit</a> 
+                                                    |
+                                                    <a href = "${pageContext.request.contextPath}/EmployeeController?action=DELETE&id=${employee.id}">Delete</a> 
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
+                                </div>-->
 
 
 

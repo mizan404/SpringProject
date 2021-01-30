@@ -44,7 +44,9 @@ public class NoticeDAO implements INoticeDAO {
 
     @Override
     public List<Notice> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Notice> notices = sessionFactory.getCurrentSession().createCriteria(Notice.class).list();
+        sessionFactory.getCurrentSession().flush();
+        return notices;
     }
 
     @Override
@@ -54,7 +56,7 @@ public class NoticeDAO implements INoticeDAO {
 
     @Override
     public List<Notice> getAllByDoctorPrivilege() {
-        String hqlQuery = "from Notice where privilege=:privilege";
+        String hqlQuery = "from Notice where notice_privilege=:privilege";
         Query query = sessionFactory.getCurrentSession().createQuery(hqlQuery);
         query.setParameter("privilege", "Doctor");
         List<Notice> nList = query.list();
@@ -64,7 +66,7 @@ public class NoticeDAO implements INoticeDAO {
 
     @Override
     public List<Notice> getAllByStaffPrivilege() {
-        String hqlQuery = "from Notice where privilege=:privilege";
+        String hqlQuery = "from Notice where notice_privilege=:privilege";
         Query query = sessionFactory.getCurrentSession().createQuery(hqlQuery);
         query.setParameter("privilege", "Staff");
         List<Notice> nList = query.list();
