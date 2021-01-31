@@ -11,7 +11,7 @@
             <hr class="sidebar-divider my-0">
             <ul
                 class="nav navbar-nav text-light" id="accordionSidebar">
-                <li class="nav-item" role="presentation"><a class="nav-link active" href="/staff/dashboard"><i class="fas fa-tachometer-alt" style="color: rgba(197,1,1,0.74);"></i><span style="color: rgb(0,21,211);">Dashboard</span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="/staffdashboard"><i class="fas fa-tachometer-alt" style="color: rgba(197,1,1,0.74);"></i><span style="color: rgb(0,21,211);">Dashboard</span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/staff/appointmentform"><i class="fas fa-clinic-medical" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Appointment Form</strong><br></span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/onlineappointment/list"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Online Appointment List</strong><br></span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/approvedlist"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Approved Appointment List</strong><br></span></a></li>
@@ -41,7 +41,7 @@
             </nav>
             <div class="container-fluid">
                 <div class="container my-4">
-                    <p class="font-weight-bold">Online Appointment Form Page</p>
+                    <p class="font-weight-bold">Appointment Form Page</p>
                     <div class="row">
                         <!-- Grid column -->
                         <div class="col-xl-12 mb-4 mb-xl-0">

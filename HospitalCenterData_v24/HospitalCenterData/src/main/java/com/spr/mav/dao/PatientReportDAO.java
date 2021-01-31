@@ -57,11 +57,13 @@ public class PatientReportDAO implements IPatientReportDAO {
     @Override
     public List<PatientReport> getByNid(int patient_nid) {
 
-//        String hqlQuery = "from PatientReport where patient_nid = '" + patient_nid + "'";
         String hqlQuery = "from PatientReport where patient_nid=:patient_nid";
         Query query = sessionFactory.getCurrentSession().createQuery(hqlQuery);
         query.setParameter("patient_nid", patient_nid);
         List<PatientReport> patientReport = query.list();
+        for (PatientReport patientReport1 : patientReport) {
+            System.out.println("DAO--------------------" + patient_nid);
+        }
 
         sessionFactory.getCurrentSession().flush();
         return patientReport;

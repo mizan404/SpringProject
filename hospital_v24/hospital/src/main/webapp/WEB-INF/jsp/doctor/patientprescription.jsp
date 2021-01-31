@@ -767,11 +767,9 @@
                     patient_nid: $("#patient_nid").val()
                 },
         function (data, status) {
-            console.log(data);
- console.log(data[0].patient_name);
- console.log(data[1].patient_name);
+            alert("Success");
             for (i = 0; i < data.length; i++) {
-                console.log(data[i].patient_name);
+
                 var html = '<tr>';
 
                 html += '<td>' + data[i].date + '</td>';

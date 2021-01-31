@@ -34,68 +34,21 @@
                                         </ul>-->
                 </div>
             </nav>
-            <!--            <div class="container-fluid">
-                            <div class="container my-4">
-                                <p class="font-weight-bold">Patient Waiting List</p>
-                                <div class="row no-gutters text-left justify-content-center align-items-center" style="height: 100%;">
-                                    <div class="col-md-12 search-table-col" style="margin-top: 0px;">
-                                        <div class="form-group pull-right col-lg-4">
-                                            <input type="text" class="search form-control" placeholder="Search by typing here.."></div>
-                                        <span class="counter pull-right" style="color: rgb(88,82,82);font-size: 22px;"></span>
-                                        <div class="table-responsive table-bordered table table-hover table-bordered results"
-                                             style="width: 100%;">
-                                            <table class="table table-bordered table-hover">
-                                                <thead class="bill-header cs">
-                                                    <tr>
-                                                        <th id="trs-hd" class="col-lg-1" style="width: 528px;">ID</th>
-                                                        <th id="trs-hd-4" class="col-lg-1" style="width: 500px;">Patient NID</th>
-                                                        <th id="trs-hd-3" class="col-lg-1" style="width: 528px;">Patient Name</th>
-                                                        <th id="trs-hd-3" class="col-lg-1" style="width: 528px;">Patient Gender</th>
-                                                        <th id="trs-hd-3" class="col-lg-1" style="width: 528px;">Patient Age</th>
-                                                        <th id="trs-hd-3" class="col-lg-1" style="width: 528px;">Patient Address</th>
-                                                        <th id="trs-hd-2" class="col-lg-1" style="width: 528px;">Patient Problem</th>
-            
-                                                        <th id="trs-hd" class="col-lg-2" style="width: 558px;">Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="warning no-result">
-                                                        <td colspan="12"><i class="fa fa-warning"></i>&nbsp; No Result !!!</td>
-                                                    </tr>
-                                                <c:forEach items="${map.admins}" var="admin">
-                                                    <tr>
-                                                        <td>${admin.id}</td>
-                                                        <td>${admin.admin_nid}</td>
-                                                        <td>${admin.admin_name}</td>
-                                                        <td>${admin.admin_password}</td>
-                                                        <td>${admin.admin_password}</td>
-                                                        <td>${admin.admin_password}</td>
-                                                        <td>${admin.admin_password}</td>
-            
-            
-            
-                                                        <td><a href="Prescription" ><button class="btn btn-info mb-1"><i class="fa fa-edit" aria-hidden="true"></i></button></a>  
-                                                            <a href="/info/admin/adminDelete/${admin.id}" ><button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></a>
-            
-                                                                                                            <button class="btn btn-success" style="margin-left: 5px;width: 36px;" type="submit"><i class="fa fa-check" style="font-size: 15px;"></i></button>
-                                                                                                            <button class="btn btn-danger" style="margin-left: 5px;width: 36px;" type="submit"><i class="fa fa-trash" style="font-size: 15px;"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                </c:forEach>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-            
-            
-            
-            
-                                </div>
-            
-                            </div>
-                        </div>-->
+            <div class="container-fluid">
+                <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                    <h3 class="text-warning mb-0">Welcome TO Doctor Page</h3>
+                    <!--                    <p class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="">
+                    
+                    
+               
+</p>-->
+                    <c:url value="/j_spring_security_logout" var="logoutUrl" />
+                    <a href="${logoutUrl}"><button class="btn btn-primary" type="button">Logout</button></a>
+                </div>
 
-            <h1>Welcome</h1>
+            </div>
+
+
         </div>
     </div>
 </div>

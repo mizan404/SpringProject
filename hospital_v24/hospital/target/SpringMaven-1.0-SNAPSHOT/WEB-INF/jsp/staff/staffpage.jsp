@@ -59,7 +59,7 @@
                             <section>
                                 <ul class="nav nav-pills" id="myTab" role="tablist">
                                     <li class="nav-item waves-effect waves-light">
-                                        <a class="nav-link" id="home-tab" data-toggle="tab" href="#insert" role="tab" aria-controls="home" aria-selected="false">Insert Staff Data</a>
+                                        <a class="nav-link" id="home-tab" data-toggle="tab" href="#insert" role="tab" aria-controls="home" aria-selected="false">Create Staff Data</a>
                                     </li>
                                     <li class="nav-item waves-effect waves-light">
                                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#update" role="tab" aria-controls="profile" aria-selected="false">Update Staff Data</a>
@@ -67,9 +67,9 @@
                                     <li class="nav-item waves-effect waves-light">
                                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#view" role="tab" aria-controls="profile" aria-selected="false">View Staff Data</a>
                                     </li>
-                                    <li class="nav-item waves-effect waves-light">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#delete" role="tab" aria-controls="profile" aria-selected="false">Delete Staff Data</a>
-                                    </li>
+                                    <!--                                    <li class="nav-item waves-effect waves-light">
+                                                                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#delete" role="tab" aria-controls="profile" aria-selected="false">Delete Staff Data</a>
+                                                                        </li>-->
                                 </ul>
                                 <div class="tab-content" id="myTabContent">
                                     <!-- Insert Section------------------------------------------------------------------------------------------------------->
@@ -77,7 +77,7 @@
                                         <section>
                                             <div class="container-fluid">
                                                 <div class="container mt-5">
-                                                    <div><h4 class="p-0 m-0 pb-3 d-flex justify-content-center">Insert Staff Details</h4></div>
+                                                    <!--<div><h4 class="p-0 m-0 pb-3 d-flex justify-content-center">Insert Staff Details</h4></div>-->
                                                     <form action="/staff/save" method="post">
                                                         <div class="form-row p-0 m-0">
                                                             <div class="col-lg-6 col-xl-6 p-0 m-0 p-3">
@@ -108,15 +108,18 @@
                                                     <form >
                                                         <div class="form-row p-0 m-0">
                                                             <div class="col-lg-6 col-xl-6 p-0 m-0 p-3">
-                                                                <!--<div class="form-group"><input class="form-control" type="number" placeholder="Admin Id" name="adminId"></div>-->
-                                                                <div class="form-group"><input class="form-control" type="number" placeholder="Admin NID" name="adminNid"/></div>
-                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Admin Name" name="adminName"/></div>
-                                                                <div class="form-group"><input class="form-control" type="password" placeholder="Admin Password" name="adminPassword"></div>
-                                                                <div class="col p-0 m-0 p-3 d-flex justify-content-end"><button class="btn btn-primary btn-block" type="submit">Submit</button></div> 
+                                                                <!--<div class="form-group"><input class="form-control" type="number" placeholder="Admin Id" name="adminid"  nullable = true></div>-->
+                                                                <!--<div class="form-group"><input class="form-control" type="text" placeholder="Medicine NID" name="admin_nid"/></div>-->
+                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Staff Name" name="staff_name"/></div>
+                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Staff Role" name="staff_role"/></div>
+                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Staff Password" name="staff_password"/></div>
+                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Hospital Number" name="hospital_number"/></div>
+                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Hospital Name" name="hospital_name"/></div>
+                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Hospital type" name="hospital_type"/></div>
+                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Hospital Location" name="hospital_location"/></div>
+                                                                <input type="submit" value="Save"/>
+                                                                <!-- <div class="col p-0 m-0 p-3 d-flex justify-content-end"><button class="btn btn-primary btn-block" type="submit">Submit</button></div> -->
                                                             </div>
-
-
-
                                                         </div>
                                                     </form>
                                                 </div>
@@ -134,10 +137,10 @@
                                                     <table class="table">
                                                         <thead>
                                                             <tr>
-                                                                <th scope="col">Admin ID</th>
-                                                                <th scope="col">Admin NID</th>
-                                                                <th scope="col">Admin Name</th>
-                                                                <th scope="col">Admin Password</th>
+                                                                <th scope="col">ID</th>
+                                                                <th scope="col">NID</th>
+                                                                <th scope="col">Name</th>
+
 
 
 

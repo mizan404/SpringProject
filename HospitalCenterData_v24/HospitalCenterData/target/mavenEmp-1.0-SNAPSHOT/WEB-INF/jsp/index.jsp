@@ -24,7 +24,7 @@
         <nav class="navbar navbar-light navbar-expand-md fixed-top shadow-lg" style="background-color: #ffffff; margin-left: 0px;margin-bottom: 0px;">
             <div class="container">
                 <a class="navbar-brand" href="#"><img src="/resources/vendor/css/assets/img/loader.gif" style="width: 60px;"></a>
-                <p>Center Hospital Database</p>
+                <h4>Center Hospital Database</h4>
                 <div
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav text-primary ml-auto">

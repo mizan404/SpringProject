@@ -169,7 +169,7 @@ public class PatientReportService implements IPatientReportService {
 
     @Override
     public List<PatientReport> getByNid(int patient_nid) {
-
+        System.out.println("----d  - - - - - - - -  - - - - - -" + patient_nid);
         return patientReportDAO.getByNid(patient_nid);
 
     }

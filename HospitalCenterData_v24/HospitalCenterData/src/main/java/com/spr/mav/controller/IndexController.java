@@ -77,11 +77,11 @@ public class IndexController {
         String name = request.getParameter("name");
         String password = request.getParameter("password");
         Map<String, Object> map = new HashMap<String, Object>();
-        if (nid.equalsIgnoreCase("12345") && name.equalsIgnoreCase("admin") && password.equalsIgnoreCase("12345")) {
+        if (nid.equals("12345") && name.equals("admin") && password.equals("12345")) {
             return new ModelAndView("/admin/dashboard");
         } else {
             map.put("status", "Incorrect: Nid or Name or Password");
-            return new ModelAndView("/admin/login", "map", map);
+            return new ModelAndView("redirect:/login", "map", map);
         }
     }
 

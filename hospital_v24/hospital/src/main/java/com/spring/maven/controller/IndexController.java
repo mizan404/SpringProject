@@ -25,6 +25,7 @@ import java.security.Principal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -95,8 +96,28 @@ public class IndexController {
     }
 
     @RequestMapping("/staff/dashboard")
-    public ModelAndView staffHomePage() {
+    public ModelAndView staffboard(HttpServletRequest request) {
+        String nid = request.getParameter("username");
+
+        String password = request.getParameter("password");
+        Map<String, Object> map = new HashMap<String, Object>();
+        if (nid.equals("staff") && password.equals("staff")) {
+            return new ModelAndView("/staff/homestaffpage");
+        } else {
+            map.put("status", "Incorrect: Nid or Name or Password");
+            return new ModelAndView("redirect:/stafflogin", "map", map);
+        }
+    }
+
+    @RequestMapping("/staffdashboard")
+    public ModelAndView staffdashboard() {
         return new ModelAndView("staff/homestaffpage");
+
+    }
+
+    @RequestMapping("/doctordashboard")
+    public ModelAndView doctordashboard() {
+        return new ModelAndView("doctor/doctordashboard");
 
     }
 
@@ -107,9 +128,17 @@ public class IndexController {
     }
 
     @RequestMapping("/doctor/dashboard")
-    public ModelAndView doctorDashboard() {
-        return new ModelAndView("doctor/doctordashboard");
+    public ModelAndView DashBoard(HttpServletRequest request) {
+        String nid = request.getParameter("username");
 
+        String password = request.getParameter("password");
+        Map<String, Object> map = new HashMap<String, Object>();
+        if (nid.equals("doctor") && password.equals("doctor")) {
+            return new ModelAndView("/doctor/doctordashboard");
+        } else {
+            map.put("status", "Incorrect: Nid or Name or Password");
+            return new ModelAndView("redirect:/doctorlogin", "map", map);
+        }
     }
 
 //    @RequestMapping("/doctor/hospitalappointment")

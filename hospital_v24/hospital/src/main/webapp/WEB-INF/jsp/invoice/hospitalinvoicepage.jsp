@@ -11,7 +11,7 @@
             <hr class="sidebar-divider my-0">
             <ul
                 class="nav navbar-nav text-light" id="accordionSidebar">
-                <li class="nav-item" role="presentation"><a class="nav-link active" href="/staff/dashboard"><i class="fas fa-tachometer-alt" style="color: rgba(197,1,1,0.74);"></i><span style="color: rgb(0,21,211);">Dashboard</span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="/staffdashboard"><i class="fas fa-tachometer-alt" style="color: rgba(197,1,1,0.74);"></i><span style="color: rgb(0,21,211);">Dashboard</span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/staff/appointmentform"><i class="fas fa-clinic-medical" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Appointment Form</strong><br></span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/onlineappointment/list"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Online Appointment List</strong><br></span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/inviocelist"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Invoice List</strong><br></span></a></li>
@@ -48,11 +48,11 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <p class="text-uppercase" style="font-size: 20px;margin-bottom: 0px;margin-top: 10px;"><strong>Invoice :&nbsp;</strong>INV-001001 <br></p>
+                        <p class="text-uppercase" style="font-size: 20px;margin-bottom: 0px;margin-top: 10px;"><strong>Invoice :&nbsp;</strong>INV-31 <br></p>
                     </div>
                     <div class="col"></div>
                     <div class="col">
-                        <p class="text-uppercase" style="font-size: 20px;margin-bottom: 0px;margin-top: 10px;">Date : 20.01.2021</p>
+                        <p class="text-uppercase" style="font-size: 20px;margin-bottom: 0px;margin-top: 10px;">Date : 31.01.2021</p>
                     </div>
                 </div>
                 <div class="row">
@@ -131,12 +131,15 @@
                     </div>
                 </div>
                 <div class="row" style="margin-right: 0px;margin-left: 0px;margin-top: 10px;">
+
+                </div>
+                <div class="row">
                     <div class="col">
-                        <p>Prepared By:&nbsp;</p>
+
                     </div>
-                    <div class="col">
-                        <p>Checked By:&nbsp;</p>
-                    </div>
+                </div>
+                <div class="row" style="margin-right: 0px;margin-left: 0px;margin-top: 10px;">
+
                 </div>
 
             </div> 

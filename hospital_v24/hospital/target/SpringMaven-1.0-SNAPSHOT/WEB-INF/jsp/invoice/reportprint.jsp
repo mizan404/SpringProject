@@ -6,7 +6,7 @@
         <div class="container-fluid d-flex flex-column p-0">
             <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="">
                 <!--<div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>-->
-                <div class="sidebar-brand-text mx-3"><span>Admin</span></div>
+
             </a>
             <hr class="sidebar-divider my-0">
             <ul
@@ -15,10 +15,11 @@
                                 <li class="nav-item" role="presentation"><a class="nav-link" href="/staff/appointmentform"><i class="fas fa-clinic-medical" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Appointment Form</strong><br></span></a></li>
                                 <li class="nav-item" role="presentation"><a class="nav-link" href="/onlineappointment/list"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Online Appointment List</strong><br></span></a></li>
                                 <li class="nav-item" role="presentation"><a class="nav-link" href="/inviocelist"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Invoice List</strong><br></span></a></li>
-                            </ul> -->
-                <li class="nav-item" role="presentation"><a class="nav-link" href="/staff/dashboard"><i class="fas fa-clinic-medical" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Dashboard</strong><br></span></a></li>
+                -->
 
-                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/staffdashboard"><i class="fas fa-clinic-medical" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Dashboard</strong><br></span></a></li>
+            </ul> 
+            <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
         </div>
     </nav>
     <div class="d-flex flex-column" id="content-wrapper">
@@ -56,12 +57,12 @@
                 <form action="/reportSave" method="post"> 
                     <div class="row" style="font-size: 10px;">
                         <div class="col">
-                            <p class="text-uppercase" style="font-size: 20px;margin-bottom: 0px;margin-top: 10px;">
-                                <strong>Invoice :&nbsp;</strong>INV-<input type="text" style="width: 150px;" id="id"/><br></p>
+
+                            <input class="form-control" type="text" style="width: 150px;" id="id"/><br>
                         </div>
                         <div class="col text-center"><button class="btn btn-light border rounded-0" type="button" id="btnSearch" ><strong>Search Patient Test</strong></button></div>
                         <div class="col">
-                            <p class="text-uppercase" style="font-size: 20px;margin-bottom: 0px;margin-top: 10px;">Date :&nbsp;<input type="text" name="date" style="width: 150px;" id="date" /></p>
+                            <input class="form-control" type="text" name="date" style="width: 120px;" id="date" placeholder="DATE"/><br>
                         </div>
                     </div>
                     <div class="row">
@@ -165,33 +166,33 @@
                                     <tbody>
                                         <tr>
                                             <td>1</td>
-                                            <td><input type="text" style="width: 400px;" id="test1" name="test1"/></td>
-                                            <td><input type="text" style="width: 190px;" id="testReport1" name="testReport1"/></td>
-                                            <td><input type="text" style="width: 190px;"></td>
+                                            <td><input class="form-control" type="text" style="width: 400px;" id="test1" name="test1"/></td>
+                                            <td><input class="form-control" type="text" style="width: 190px;" id="testReport1" name="testReport1"/></td>
+                                            <td><input class="form-control" type="text" style="width: 190px;"></td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
-                                            <td><input type="text" style="width: 400px;" id="test2" name="test2"/></td>
-                                            <td><input type="text" style="width: 190px;" id="testReport2" name="testReport2"/></td>
-                                            <td><input type="text" style="width: 190px;"></td>
+                                            <td><input class="form-control" type="text" style="width: 400px;" id="test2" name="test2"/></td>
+                                            <td><input class="form-control" type="text" style="width: 190px;" id="testReport2" name="testReport2"/></td>
+                                            <td><input class="form-control" type="text" style="width: 190px;"></td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td><input type="text" style="width: 400px;" id="test3" name="test3"/></td>
-                                            <td><input type="text" style="width: 190px;" id="testReport3" name="testReport3"/></td>
-                                            <td><input type="text" style="width: 190px;"></td>
+                                            <td><input class="form-control" type="text" style="width: 400px;" id="test3" name="test3"/></td>
+                                            <td><input class="form-control" type="text" style="width: 190px;" id="testReport3" name="testReport3"/></td>
+                                            <td><input class="form-control" type="text" style="width: 190px;"></td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
-                                            <td><input type="text" style="width: 400px;" id="test4" name="test4"/></td>
-                                            <td><input type="text" style="width: 190px;" id="testReport4" name="testReport4"/></td>
-                                            <td><input type="text" style="width: 190px;"></td>
+                                            <td><input class="form-control" type="text" style="width: 400px;" id="test4" name="test4"/></td>
+                                            <td><input class="form-control" type="text" style="width: 190px;" id="testReport4" name="testReport4"/></td>
+                                            <td><input class="form-control" type="text" style="width: 190px;"></td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
-                                            <td><input type="text" style="width: 400px;" id="test5" name="test5"/></td>
-                                            <td><input type="text" style="width: 190px;" id="testReport5" name="testReport5"/></td>
-                                            <td><input type="text" style="width: 190px;"></td>
+                                            <td><input class="form-control" style="width: 400px;" id="test5" name="test5"/></td>
+                                            <td><input class="form-control" style="width: 190px;" id="testReport5" name="testReport5"/></td>
+                                            <td><input class="form-control" style="width: 190px;"></td>
                                         </tr>
 
                                     </tbody>

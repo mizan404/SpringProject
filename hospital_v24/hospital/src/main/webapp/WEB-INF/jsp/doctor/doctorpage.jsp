@@ -11,7 +11,7 @@
             <hr class="sidebar-divider my-0">
             <ul
                 class="nav navbar-nav text-light" id="accordionSidebar">
-                <li class="nav-item" role="presentation"><a class="nav-link active" href="dashboard"><i class="fas fa-tachometer-alt" style="color: rgba(197,1,1,0.74);"></i><span style="color: rgb(0,21,211);">Dashboard</span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="/dashboard"><i class="fas fa-tachometer-alt" style="color: rgba(197,1,1,0.74);"></i><span style="color: rgb(0,21,211);">Dashboard</span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="doctorpage"><i class="fas fa-clinic-medical" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Doctor</strong><br></span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="staffpage"><i class="fas fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Staff</strong><br></span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="departmentpage"><i class="far fa-user" style="color: rgba(197,1,1,0.74);"></i><span style="color: #0e20c2;"><strong>Department</strong><br></span></a></li>
@@ -38,7 +38,8 @@
                         <p class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="">
 
 
-                            ${userName} 
+                            <c:url value="/j_spring_security_logout" var="logoutUrl" />
+                            <a href="${logoutUrl}"><button class="btn btn-primary" type="button">Logout</button></a>
                         </p>
                     </div>
                     <div class="row">
@@ -54,7 +55,7 @@
                             <section>
                                 <ul class="nav nav-pills" id="myTab" role="tablist">
                                     <li class="nav-item waves-effect waves-light">
-                                        <a class="nav-link" id="home-tab" data-toggle="tab" href="#insert" role="tab" aria-controls="home" aria-selected="false">Insert Doctor Data</a>
+                                        <a class="nav-link" id="home-tab" data-toggle="tab" href="#insert" role="tab" aria-controls="home" aria-selected="false">Create Doctor Data</a>
                                     </li>
                                     <li class="nav-item waves-effect waves-light">
                                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#update" role="tab" aria-controls="profile" aria-selected="false">Update Doctor Data</a>
@@ -62,9 +63,9 @@
                                     <li class="nav-item waves-effect waves-light">
                                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#view" role="tab" aria-controls="profile" aria-selected="false">View Doctor Data</a>
                                     </li>
-                                    <li class="nav-item waves-effect waves-light">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#delete" role="tab" aria-controls="profile" aria-selected="false">Delete Doctor Data</a>
-                                    </li>
+                                    <!--                                    <li class="nav-item waves-effect waves-light">
+                                                                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#delete" role="tab" aria-controls="profile" aria-selected="false">Delete Doctor Data</a>
+                                                                        </li>-->
                                 </ul>
                                 <div class="tab-content" id="myTabContent">
                                     <!-- Insert Section------------------------------------------------------------------------------------------------------->
@@ -72,7 +73,7 @@
                                         <section>
                                             <div class="container-fluid">
                                                 <div class="container mt-5">
-                                                    <div><h4 class="p-0 m-0 pb-3 d-flex justify-content-center">Insert Doctor Details</h4></div>
+
                                                     <form action="/doctor/save" method="post">
                                                         <div class="form-row p-0 m-0">
                                                             <div class="col-lg-6 col-xl-6 p-0 m-0 p-3">
@@ -195,15 +196,110 @@
                                                     <form >
                                                         <div class="form-row p-0 m-0">
                                                             <div class="col-lg-6 col-xl-6 p-0 m-0 p-3">
-                                                                <!--<div class="form-group"><input class="form-control" type="number" placeholder="Admin Id" name="adminId"></div>-->
-                                                                <div class="form-group"><input class="form-control" type="number" placeholder="Admin NID" name="adminNid"/></div>
-                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Admin Name" name="adminName"/></div>
-                                                                <div class="form-group"><input class="form-control" type="password" placeholder="Admin Password" name="adminPassword"></div>
-                                                                <div class="col p-0 m-0 p-3 d-flex justify-content-end"><button class="btn btn-primary btn-block" type="submit">Submit</button></div> 
+                                                                <!--                                                                <div class="form-group"><input class="form-control" type="number" placeholder="Admin Id" name="adminid"  nullable = true></div>
+                                                                                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Medicine NID" name="admin_nid"/></div>
+                                                                                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Staff Name" name="staff_name"/></div>
+                                                                                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Staff Role" name="staff_role"/></div>
+                                                                                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Staff Password" name="staff_password"/></div>
+                                                                                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Hospital Number" name="hospital_number"/></div>
+                                                                                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Hospital Name" name="hospital_name"/></div>
+                                                                                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Hospital type" name="hospital_type"/></div>
+                                                                                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Hospital Location" name="hospital_location"/></div>-->
+
+                                                                <!--------------------------------------->
+                                                                <div class="form-group">
+
+                                                                    <input class="form-control" type="text" placeholder="doctor nid" name="doctor_nid"/>
+                                                                </div>
+                                                                <div class="form-group">
+
+                                                                    <input class="form-control" type="text" placeholder="doctor name" name="doctor_name"/>
+                                                                </div>
+                                                                <div class="form-group">
+
+                                                                    <input class="form-control" type="text" placeholder="doctor degree" name="doctor_degree" />
+                                                                </div>
+                                                                <div class="form-group">
+
+                                                                    <select class="form-control"  name="doctor_specialist" >
+                                                                        <optgroup label="Select A Specialist">
+                                                                            <option value="Cardiologists">Cardiologists</option>
+                                                                            <option value="Dermatologists">Dermatologists</option>
+                                                                            <option value="Gastroenterologists">Gastroenterologists</option>
+                                                                            <option value="Hematologists">Hematologists</option>
+
+                                                                            <option value="Nephrologists">Nephrologists</option>
+                                                                            <option value="Neurologists">Neurologists</option>
+                                                                            <option value="Oncologists">Oncologists</option>
+                                                                            <option value="Hematologists">Hematologists</option>
+                                                                        </optgroup>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+
+                                                                    <select class="form-control" name="doctor_designation">
+                                                                        <optgroup label="Select A Designation">
+                                                                            <option value="Assistant Professor">Assistant Professor.</option>
+                                                                            <option value="Senior Assistant Professor">Senior Assistant Professor</option>
+                                                                            <option value="Associate Professor ">Associate Professor </option>
+                                                                            <option value="Senior Associate professor">Senior Associate professor</option>
+                                                                            <option value="Professor">Professor</option>
+
+
+                                                                        </optgroup>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+
+                                                                    <select class="form-control" name="doctor_department">
+                                                                        <optgroup label="Select A Doctor Department">
+                                                                            <option value="Cardiology" >Cardiology</option>
+                                                                            <option value="Diagnostic imaging" >Diagnostic imaging</option>
+                                                                            <option value="Discharge lounge" >Discharge lounge</option>
+                                                                            <option value="Ear nose and throat" >Ear nose and throat</option>
+                                                                            <option value="General surgery" >General surgery</option>
+                                                                            <option value="Gynaecology" >Gynaecology</option>
+                                                                            <option value="Haematology" >Haematology</option>
+                                                                            <option value="Nephrology" >Nephrology</option>
+
+                                                                        </optgroup>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+
+                                                                    <input class="form-control" type="text" placeholder="doctor registerId" name="doctor_registerId" />
+                                                                </div>
+                                                                <!--                                                                <div class="form-group">
+                                                                
+                                                                                                                                    <select class="form-control" name="">
+                                                                                                                                        <optgroup label="Select A Designation">
+                                                                                                                                            <option value="12" >This is item 1</option>
+                                                                                                                                            <option value="13">This is item 2</option>
+                                                                                                                                            <option value="14">This is item 3</option>
+                                                                                                                                        </optgroup>
+                                                                                                                                    </select>
+                                                                                                                                </div>-->
+                                                                <div class="form-group">
+
+                                                                    <input class="form-control" type="text" placeholder="doctor password" name="doctor_password" autocomplete="off" />
+                                                                </div>
+                                                                <!--Hospital Data-->
+
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" placeholder="Hospital Number" name="hospital_number"/>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" placeholder="Hospital Name" name="hospital_name"/>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" placeholder="Hospital type" name="hospital_type"/>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <input class="form-control" type="text" placeholder="Hospital Location" name="hospital_location"/>
+                                                                </div>
+                                                                <input type="submit" value="Save"/>
+                                                                <!-- <div class="col p-0 m-0 p-3 d-flex justify-content-end"><button class="btn btn-primary btn-block" type="submit">Submit</button></div> -->
                                                             </div>
-
-
-
                                                         </div>
                                                     </form>
                                                 </div>
@@ -221,10 +317,13 @@
                                                     <table class="table">
                                                         <thead>
                                                             <tr>
-                                                                <th scope="col">Admin ID</th>
-                                                                <th scope="col">Admin NID</th>
-                                                                <th scope="col">Admin Name</th>
-                                                                <th scope="col">Admin Password</th>
+                                                                <th scope="col">ID</th>
+                                                                <th scope="col">NID</th>
+                                                                <th scope="col">Name</th>
+                                                                <th scope="col">Degree </th>
+                                                                <th scope="col">Specialist </th>
+                                                                <th scope="col">Department</th>
+                                                                <th scope="col">Register ID </th>
 
 
 
@@ -258,79 +357,7 @@
 
                                     <!--Delete Section---------------------------------------------------------------------------------------------------->
 
-                                    <div class="tab-pane fade" id="delete" role="tabpanel" aria-labelledby="profile-tab">
-                                        <section>
 
-
-
-                                            <div class="container-fluid">
-                                                <div class="container mt-5">
-                                                    <div ><h4 class="p-0 m-0 pb-3 d-flex justify-content-center">Delete Doctor Details</h4></div>
-
-                                                    <form class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
-                                                        </div>
-                                                    </form>
-
-
-                                                    <form >
-                                                        <div class="form-row p-0 m-0">
-
-                                                            <div class="col-lg-6 col-xl-6 p-0 m-0 p-3" id="formPersonal">
-
-                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Name"></div>
-                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Apellidos"></div>
-                                                                <div class="form-group"><input class="form-control" type="email" required="" placeholder="Correo electrónico"></div>
-                                                                <div class="form-group"><input class="form-control" type="tel" placeholder="Celular / Teléfono"></div>
-                                                                <!-- <div class="form-group"><input class="form-control" type="tel" required="" placeholder="LinkedIn"></div> -->
-                                                            </div>
-                                                            <div class="col-lg-6 col-xl-6 p-0 m-0 p-3" id="formPersonal">
-
-                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Name"></div>
-
-                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Apellidos"></div>
-                                                                <div class="form-group"><input class="form-control" type="email" required="" placeholder="Correo electrónico"></div>
-                                                                <div class="form-group"><input class="form-control" type="tel" placeholder="Celular / Teléfono"></div>
-                                                                <!-- <div class="form-group"><input class="form-control" type="tel" required="" placeholder="LinkedIn"></div> -->
-                                                            </div>
-                                                            <div class="col-lg-6 col-xl-6 p-0 m-0 p-3" id="formPersonal">
-
-                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Name"></div>
-                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Apellidos"></div>
-                                                                <!-- <div class="form-group"><input class="form-control" type="email" required="" placeholder="Correo electrónico"></div> -->
-                                                                <!-- <div class="form-group"><input class="form-control" type="tel" placeholder="Celular / Teléfono"></div> -->
-                                                                <!-- <div class="form-group"><input class="form-control" type="tel" required="" placeholder="LinkedIn"></div> -->
-                                                            </div>
-                                                            <div class="col-lg-6 col-xl-6 p-0 m-0 p-3" id="formPersonal">
-
-                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Name"></div>
-                                                                <div class="form-group"><input class="form-control" type="text" placeholder="Apellidos"></div>
-                                                                <!-- <div class="form-group"><input class="form-control" type="email" required="" placeholder="Correo electrónico"></div>
-                                                                <div class="form-group"><input class="form-control" type="tel" placeholder="Celular / Teléfono"></div>
-                                                                <div class="form-group"><input class="form-control" type="tel" required="" placeholder="LinkedIn"></div> -->
-                                                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-                                                            <div class="col p-0 m-0 p-3 d-flex justify-content-end"><button class="btn btn-primary btn-block" type="button">Delete</button></div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </section>
-
-
-                                    </div>
                                 </div>
 
                             </section>
