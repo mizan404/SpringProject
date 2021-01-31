@@ -767,7 +767,7 @@
                     patient_nid: $("#patient_nid").val()
                 },
         function (data, status) {
-            alert("Success");
+            alert("Old Report");
             for (i = 0; i < data.length; i++) {
 
                 var html = '<tr>';
