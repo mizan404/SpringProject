@@ -76,7 +76,7 @@
                             <c:forEach items="${map.onlineAppointments}" var="report">
                                 <tr>
                                     <td>${report.doctor_nid}</td>
-                                    <td>${report.doctor_name}</td>
+                                    <td style="color: #0000ff">${report.doctor_name}</td>
                                     <td>${report.patient_nid}</td>
                                     <td style="color: #0000ff">${report.patient_name}</td>
                                     <!--                                    <td> 

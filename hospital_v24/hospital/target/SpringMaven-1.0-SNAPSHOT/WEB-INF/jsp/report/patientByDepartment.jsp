@@ -92,7 +92,7 @@
                                 <th>Patient NID</th>
                                 <th>Patient Name</th>
                                 <th>Patient Location</th>
-                                <th style="color: #ff0000">Department</th>
+                                <th>Department</th>
 
                                 <!--<th>Actions</th>-->
                             </tr>
@@ -101,10 +101,10 @@
                             <c:forEach items="${map.patientBydepartment}" var="department">
                                 <tr>
                                     <td>${department.id}</td>
-                                    <td>${department.patient_nid}</td>
+                                    <td style="color: #0000ff">${department.patient_nid}</td>
                                     <td>${department.patient_name}</td>
                                     <td>${department.patient_address}</td>
-                                    <td style="color: #ff0000">${department.patient_problem}</td>
+                                    <td style="color: #0000ff">${department.patient_problem}</td>
                                     <!--                                    <td> 
                                                                             <a href = "${pageContext.request.contextPath}/EmployeeController?action=EDIT&id=${employee.id}">Edit</a> 
                                                                             |

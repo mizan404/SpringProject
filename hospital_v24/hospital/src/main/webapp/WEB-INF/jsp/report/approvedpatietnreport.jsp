@@ -101,10 +101,10 @@
                             <c:forEach items="${map.onlineAppointments}" var="appointment">
                                 <tr>
                                     <td>${appointment.id}</td>
-                                    <td>${appointment.patient_nid}</td>
-                                    <td>${appointment.patient_problem}</td>
-                                    <td>${appointment.contact_number}</td>
-                                    <td>${appointment.appointmentDate}</td>
+                                    <td style="color: #0000ff">${appointment.patient_nid}</td>
+                                    <td style="color: #0000ff">${appointment.patient_problem}</td>
+                                    <td style="color: #0000ff">${appointment.contact_number}</td>
+                                    <td style="color: #0000ff">${appointment.appointmentDate}</td>
                                     <!--                                    <td> 
                                                                             <a href = "${pageContext.request.contextPath}/EmployeeController?action=EDIT&id=${employee.id}">Edit</a> 
                                                                             |

@@ -97,7 +97,7 @@
                             <div class="container">
                                 <div class="row">
                                     <c:forEach items="${map.notice}" var="n">
-                                        <div class="card w-75" style="margin-top: 5px">
+                                        <div class="card w-75 shadow-sm p-3 mb-5 bg-white rounded" style="margin-top: 5px">
                                             <div class="card-body">
                                                 <h5 class="card-title">${n.notice_title}</h5>
                                                 <p class="card-text">${n.notice_discription}</p>

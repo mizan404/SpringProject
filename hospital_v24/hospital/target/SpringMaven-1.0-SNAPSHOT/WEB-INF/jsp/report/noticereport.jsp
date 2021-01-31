@@ -77,7 +77,7 @@
                             <c:forEach items="${map.onlineAppointments}" var="report">
                                 <tr>
                                     <td>${report.id}</td>
-                                    <td>${report.notice_title}</td>
+                                    <td style="color: #0000ff">${report.notice_title}</td>
                                     <td>${report.notice_discription}</td>
                                     <td>${report.notice_privilege}</td>
                                     <td style="color: #0000ff">${report.date}</td>
